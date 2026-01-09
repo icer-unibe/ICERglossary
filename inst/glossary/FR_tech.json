@@ -1,0 +1,16 @@
+{
+  "format": {
+    "percentage": "%<percent>.0f {{symbol/percentage}}",
+    "percentageInBrackets": "%<percent>.0f {{symbol/percentageInBrackets}}",
+    "percentageInTables": "%<percent>.1f {{symbol/percentageInBrackets}}",
+    "achievementRate": "{{format/percentage}}",
+    "achievementRateInBrackets": "{{format/percentageInBrackets}}"
+  },
+  "symbol": {
+    "percentage": "%%",
+    "percentagePoints": "points de pourcentage",
+    "percentageInBrackets": "%%",
+    "bigMark": " ",
+    "punctuationSpacer": " "
+  }
+}

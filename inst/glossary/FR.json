@@ -1,0 +1,272 @@
+{
+  "label": {
+
+    "ZH": "Zurich",
+    "BE_d": "Berne (partie germanophone)",
+    "BE_f": "Berne (partie francophone)",
+    "LU": "Lucerne",
+    "UR": "Uri",
+    "SZ": "Schwyz",
+    "OW": "Obwald",
+    "NW": "Nidwald",
+    "GL": "Glaris",
+    "FR_f": "Fribourg (partie francophone)",
+    "FR_d": "Fribourg (partie germanophone)",
+    "SO": "Soleure",
+    "BS": "Bâle-Ville",
+    "BL": "Bâle-Campagne",
+    "SH": "Schaffhouse",
+    "AR": "Appenzell Rhodes-Extérieures",
+    "AI": "Appenzell Rhodes-Intérieures",
+    "SG": "Saint-Gall",
+    "GR_d": "Grisons (partie germanophone)",
+    "GR_i": "Grisons (partie italophone)",
+    "AG": "Argovie",
+    "TG": "Thurgovie",
+    "TI": "Tessin",
+    "VD": "Vaud",
+    "VS_f": "Valais (partie francophone)",
+    "VS_d": "Valais (partie germanophone)",
+    "NE": "Neuchâtel",
+    "GE": "Genève",
+    "JU": "Jura",
+    "GR": "Grisons",
+
+    "sl": "Compréhension écrite dans la langue de scolarisation",
+    "sod": "Orthographe dans la langue de scolarisation – Allemand",
+    "sof": "Orthographe dans la langue de scolarisation – Français",
+    "soi": "Orthographe dans la langue de scolarisation – Italien",
+    "hvd": "Compréhension orale en allemand langue étrangère",
+    "hve": "Compréhension orale en anglais langue étrangère",
+    "hvf": "Compréhension orale en français langue étrangère",
+    "lvd": "Compréhension écrite en allemand langue étrangère",
+    "lve": "Compréhension écrite en anglais langue étrangère",
+    "lvf": "Compréhension écrite en français langue étrangère",
+
+    "math": "Mathématiques",
+    "list": "Compréhension orale",
+    "read": "Compréhension écrite",
+    "list_long": "Compréhension orale dans la langue de scolarisation",
+    "read_long": "Compréhension écrite dans la langue de scolarisation",
+
+    "mean_testregion": "Moyenne région de test",
+    "sig.": "sig.",
+    "non-sig.": "n.s.",
+    "unadjusted": "Non contrôlé",
+    "adjusted": "Contrôlé",
+    "overall_mean": "Résultat global Suisse",
+    "cantonal_mean": "Résultat global Canton",
+    "CH_OVERALL": "{{label\/overall_mean}}",
+    "achievementOfBasicCompetence": "Atteinte des compétences fondamentales",
+    "byGender": "selon le genre",
+    "bySES": "selon l’origine sociale",
+    "byHomelang": "selon la langue parlée à la maison",
+    "byMigrationStatus": "selon le statut migratoire",
+    
+    "PPS": "Procédure PPS",
+    "Mixed Design": "Design mixte",
+    "School Census": "Recensement scolaire",
+    
+    "design": "Design de l’échantillonnage",
+    "Ausschluss_Schule (%)": "Taux d’exclusion des élèves\nau niveau école",
+    "Ausschluss_Schuler (%)": "Taux d’exclusion\nau niveau des élèves",
+    "RQ_Sch": "Taux de participation\nau niveau école",
+    "RQ_Stu (%)": "Taux de participation\nau niveau des élèves",
+    "Anzahl_Schulen": "Anzahl erhobener\nSchulen",
+    "Anzahl_SuS": "Anzahl erhobener\nSchülerinnen und Schüler",
+    "UGKPopulationsumfang": "Taille de la population COFO",
+    "Ausschopfung (%)": "Couverture estimée",
+    "teilnehmende_SuS": "Nombre d’élèves participants\n(échantillon réalisé)",
+    "total": "Total",
+    "canton": "Canton",
+    "and": "et",
+
+    "competence_domain": "Domaine de compétence",
+    "individual_characteristic": "Caractéristiques individuelles",
+    "difference_description": "Désignation de la différence",
+    "difference_result": "Différence et significativité",
+
+    "st_female": {
+      "var": "Genre",
+      "level": {
+        "0": "Filles",
+        "1": "Garçons"
+      }
+    },
+    "st_gender": {
+      "var": "Genre",
+      "level": {
+        "1": "Filles",
+        "2": "Garçons"
+      }
+    },
+    "homelang": {
+      "var": "Langue parlée à la maison",
+      "level": {
+        "1": "Uniquement langue de scolarisation",
+        "2": "Langue de scolarisation et autre(s) langue(s)",
+        "3": "Uniquement autre(s) langue(s)"
+      }
+    },
+    "homelang2": {
+      "var": "{{label\/homelang\/var}}",
+      "level": {
+        "1": "Langue de scolarisation",
+        "2": "Pas la langue de scolarisation"
+      }
+    },
+    "homelang2_long": {
+      "var": "{{label\/homelang\/var}}",
+      "level": {
+        "1": "Langue de scolarisation à la maison",
+        "2": "Ne parlant pas la langue de scolarisation à la maison"
+      }
+    },
+    "sq": "Questionnaire destiné aux élèves",
+    "pq": "Questionnaire destiné aux parents",
+    "sq_homelang": {
+      "var": "{{label\/homelang\/var}} ({{label\/sq}})",
+      "level": "{{label\/homelang\/level}}"
+    },
+    "pq_homelang": {
+      "var": "{{label\/homelang\/var}} ({{label\/pq}})",
+      "level": "{{label\/homelang\/level}}"
+    },
+    "immig": {
+      "var": "Statut migratoire",
+      "level": {
+        "1": "Non issus de la migration",
+        "2": "Issus de la migration (2ᵉ génération)",
+        "3": "Issus de la migration (1ʳᵉ génération)"
+      }
+    },
+    "immig_short": {
+      "var": "Statut migratoire",
+      "level": {
+        "1": "Natif",
+        "2": "2ᵉ génération",
+        "3": "1ʳᵉ génération"
+      }
+    },
+    "sq_immig": {
+      "var": "{{label\/immig\/var}} ({{label\/sq}})",
+      "level": "{{label\/immig\/level}}"
+    },
+    "pq_immig": {
+      "var": "{{label\/immig\/var}} ({{label\/pq}})",
+      "level": "{{label\/immig\/level}}"
+    },
+    "zSES_quartiles": {
+      "var": "Origine sociale",
+      "level": {
+        "1": "Quart inférieur",
+        "2": "2ᵉ quart",
+        "3": "3ᵉ quart",
+        "4": "Quart supérieur"
+      }
+    },
+    "st_nprog": {
+      "var": "Programme scolaire cantonal",
+      "level": {
+        "1": "Exigences de base",
+        "2": "Exigences étendues",
+        "3": "Enseignement prégymnasial",
+        "4": "Sans programme scolaire cantonal officiel",
+        "9": "Sans différenciation en fonction des exigences"
+      }
+    }
+  },
+
+  "write": {
+
+    "cantons": {
+      "aboveAverage": {
+        "0" : "Aucun canton ne se situe significativement au-dessus du résultat global.",
+        "1": "Seul le canton de %<canton>s avec une part de {{format\/percentage}} se situe significativement au-dessus du résultat global.",
+        "2": "%<canton>s avec une part de {{format\/percentage}} et %<canton>s avec une part de {{format\/percentage}} se situent au-dessus du résultat global.",
+        ">2": {
+          "part1": "Les cantons suivants se situent de manière statistiquement significative au-dessus du résultat global : ",
+          "part2.rep": "%<canton>s avec une part de {{format\/percentage}}, ",
+          "part3": "%<canton>s avec une part de {{format\/percentage}} et %<canton>s avec une part de {{format\/percentage}}."
+        }
+      },
+
+      "belowAverage": {
+        "0" : "Aucun canton ne se situe significativement en dessous du résultat global.",
+        "1": "Seul le canton de %<canton>s avec une part de {{format\/percentage}} se situe significativement en dessous du résultat global.",
+        "2": "%<canton>s avec une part de {{format\/percentage}} et %<canton>s avec une part de {{format\/percentage}} se situent en dessous du résultat global.",
+        ">2": {
+          "part1": "Les cantons suivants se situent de manière statistiquement significative en dessous du résultat global : ",
+          "part2.rep": "%<canton>s avec une part de {{format\/percentage}}, ",
+          "part3": "%<canton>s avec une part de {{format\/percentage}} et %<canton>s avec une part de {{format\/percentage}}."
+        }
+      },
+
+      "bySchooltypeAndCanton": {
+        "achievementRates": "Dans la filière %<schooltype>s, la proportion d’élèves atteignant les compétences fondamentales se situe entre {{format\/percentage}} et {{format\/percentage}}.",
+        "studentDistribution": "La proportion d’élèves dans la filière %<schooltype>s varie entre {{format\/percentage}} et {{format\/percentage}}."
+      }
+    }
+  },
+
+  "draft": {
+    "featureDistribution": {
+      "part1": "À l’échelle de la Suisse, la répartition de la caractéristique « %<feature>s » parmi les élèves est la suivante :",
+      "part2.rep": "\n\n- {{format\/percentage}} %<category>s, varie selon\n\n  - le canton entre {{format\/percentage}} à %<canton>s et {{format\/percentage}} à %<canton>s"
+    },
+    "achievementRate": {
+      "feature": {
+        "average": "{{draft\/achievementRate\/cantons\/average}}",
+        "list.sig": {
+          "part1": "\n\nOn observe des différences significatives entre les différentes modalités de la caractéristique :",
+          "part2.rep": "\n\n- %<feature>s"
+        },
+        "details": {
+          "range": "\n\nPour la caractéristique « %<feature>s », la proportion d’élèves atteignant les compétences fondamentales varie selon les modalités de la caractéristique entre {{format\/percentage}} (%<category.min>s) et {{format\/percentage}} (%<category.max>s).",
+          "nonSig": "Les différences observées ne sont pas statistiquement significatives.",
+          "sig.header": "Les différences suivantes sont statistiquement significatives :",
+          "sig.rep": "\n\n- (a) %<category>s ({{format\/percentageInBrackets}}) par rapport à (b) %<category>s ({{format\/percentageInBrackets}}) :\n\n  La différence de {{format\/percentage}} est statistiquement significative (p = {{format\/p}}).",
+          "controlled.sig": "\n\n  reste significative après contrôle statistique des caractéristiques {{draft\/achievementRate\/feature\/details\/..controlled.stats}}",
+          "controlled.nonSig": "\n\n  n’est plus significative après contrôle statistique des autres caractéristiques {{draft\/achievementRate\/feature\/details\/..controlled.stats}}",
+          "..controlled.stats": "\n\n  [a={{format\/percentage}}, b={{format\/percentage}}, diff={{format\/percentage}}, p={{format\/p}}]"
+        }
+      },
+      "country": {
+        "part1": "À l’échelle de la Suisse, la proportion d’élèves atteignant les compétences fondamentales varie selon le domaine de compétence entre {{format\/percentage}} (“%<domain.min>s”) et {{format\/percentage}} (“%<domain.max>s”) :",
+        "part2.rep": "\n\n- dans le domaine « %<domain>s », {{format\/percentage}} des élèves",
+        "part3": "\n\nont atteint les compétences fondamentales."
+      },
+      "cantons": {
+        "average": "Dans le domaine de compétence « %<domain>s », {{format\/percentage}} des élèves atteignent les compétences fondamentales.",
+        "range": "La proportion d’élèves atteignant les compétences fondamentales varie selon le canton entre {{format\/percentage}} (%<canton.min>s) et {{format\/percentage}} (%<canton.max>s).",
+        "aboveAverage": {
+          "0": "{{write\/cantons\/aboveAverage\/0}}",
+          "1": "Le seul canton à se situer au-dessus de la moyenne globale est %<canton>s, avec un pourcentage de {{format\/percentage}}, soit +{{format\/percentage}} (p = {{format\/p}}).",
+          ">1": {
+            "part1": "%<number>s cantons présentent un résultat statistiquement significatif au-dessus de la moyenne globale :",
+            "part2.rep": "\n\n- %<canton>s, avec une part de {{format\/percentage}} (+{{format\/percentage}}, p = {{format\/p}})"
+          }
+        },
+        "belowAverage": {
+          "0": "{{write\/cantons\/belowAverage\/0}}",
+          "1": "Le seul canton à se situer en dessous de la moyenne globale est %<canton>s, avec un pourcentage de {{format\/percentage}}, soit {{format\/percentage}} (p = {{format\/p}}).",
+          ">1": {
+            "part1": "%<number>s cantons présentent un résultat statistiquement significatif en dessous de la moyenne globale :",
+            "part2.rep": "\n\n- %<canton>s, avec une part de {{format\/percentage}} {{format\/percentageInBrackets}}, p = {{format\/p}})"
+          }
+        }
+      }
+    }
+  },
+  "cantonalPortrait": {
+    "title": "# %<canton>s",
+    "header": {
+      "1": "## Population et échantillon",
+      "2": "## Caractéristiques de la population cantonale",
+      "3": "## Atteinte des compétences fondamentales",
+      "4": "### {{label\/math}}",
+      "5": "### {{label\/list_long}}",
+      "6": "### {{label\/read_long}}"
+    }
+  }
+}

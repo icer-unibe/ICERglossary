@@ -1,0 +1,31 @@
+{
+  "format": {
+    "points": "%<points>.0f {{symbol/points}}",
+    "percentage": "%<percent>.0f {{symbol/percentage}}",
+    "percentagePoint": "%<pp>.0f {{symbol/percentagePoint}}",
+    "percentagePoints": "%<pp>.0f {{symbol/percentagePoints}}",
+    "percentageInBrackets": "%<percent>.0f{{symbol/percentageInBrackets}}",
+    "percentageInTables": "%<percent>.1f{{symbol/percentageInBrackets}}",
+    "percentageInPlots": "%<percent>.0f{{symbol/percentageInBrackets}}",
+    "percentageInPlots.featureDistribution": {
+      "digits": 0,
+      "fmt": "%<percent>s{{symbol/percentageInBrackets}}"
+    },
+    "percentageInPlots.digits": 0,
+    "achievementRate": "{{format/percentage}}",
+    "achievementRateInBrackets": "{{format/percentageInBrackets}}",
+    "p": "%<p>.2f",
+    "samplingTableEntry": "%<key>s:\n%<value>s"
+  },
+
+  "symbol": {
+    "points": "Punkte",
+    "percentage": "Prozent",
+    "percentagePoint": "Prozentpunkt",
+    "percentagePoints": "Prozentpunkte",
+    "percentageInBrackets": " %%",
+    "bigMark": "’",
+    "punctuationSpacer": ""
+  }
+  
+}

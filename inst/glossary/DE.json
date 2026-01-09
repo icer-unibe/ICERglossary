@@ -1,0 +1,272 @@
+{
+  "label": {
+
+    "ZH": "Zürich",
+    "BE_d": "Bern (deutschsprachiger Teil)",
+    "BE_f": "Bern (französischsprachiger Teil)",
+    "LU": "Luzern",
+    "UR": "Uri",
+    "SZ": "Schwyz",
+    "OW": "Obwalden",
+    "NW": "Nidwalden",
+    "GL": "Glarus",
+    "FR_f": "Freiburg (französischsprachiger Teil)",
+    "FR_d": "Freiburg (deutschsprachiger Teil)",
+    "SO": "Solothurn",
+    "BS": "Basel-Stadt",
+    "BL": "Basel-Landschaft",
+    "SH": "Schaffhausen",
+    "AR": "Appenzell Ausserrhoden",
+    "AI": "Appenzell Innerrhoden",
+    "SG": "Sankt Gallen",
+    "GR_d": "Graubünden (deutschsprachiger Teil)",
+    "GR_i": "Graubünden (italienischsprachiger Teil)",
+    "AG": "Aargau",
+    "TG": "Thurgau",
+    "TI": "Tessin",
+    "VD": "Waadt",
+    "VS_f": "Wallis (französischsprachiger Teil)",
+    "VS_d": "Wallis (deutschsprachiger Teil)",
+    "NE": "Neuenburg",
+    "GE": "Genf",
+    "JU": "Jura",
+    "GR": "Graubünden",
+
+    "sl": "Lesen in der Schulsprache",
+    "sod": "Orthografie in der Schulsprache Deutsch",
+    "sof": "Orthografie in der Schulsprache Französisch",
+    "soi": "Orthografie in der Schulsprache Italienisch",
+    "hvd": "Hörverstehen in der Fremdsprache Deutsch",
+    "hve": "Hörverstehen in der Fremdsprache Englisch",
+    "hvf": "Hörverstehen in der Fremdsprache Französisch",
+    "lvd": "Leseverstehen in der Fremdsprache Deutsch",
+    "lve": "Leseverstehen in der Fremdsprache Englisch",
+    "lvf": "Leseverstehen in der Fremdsprache Französisch",
+
+    "math": "Mathematik",
+    "list": "Hören",
+    "read": "Lesen",
+    "list_long": "Hören in der Schulsprache",
+    "read_long": "Lesen in der Schulsprache",
+
+    "mean_testregion": "Durchschnitt Testregion",
+    "sig.": "sig.",
+    "non-sig.": "nicht sig.",
+    "unadjusted": "unkontrolliert",
+    "adjusted": "kontrolliert",
+    "overall_mean": "Gesamtergebnis Schweiz",
+    "cantonal_mean": "Gesamtergebnis Kanton",
+    "CH_OVERALL": "{{label/overall_mean}}",
+    "achievementOfBasicCompetence": "Erreichen der Grundkompetenz",
+    "byGender": "nach Geschlecht",
+    "bySES": "nach sozialer Herkunft",
+    "byHomelang": "nach zu Hause gesprochener Sprache",
+    "byMigrationStatus": "nach Migrationshintergrund",
+    
+    "PPS": "PPS-Verfahren",
+    "Mixed Design": "gemischtes Design",
+    "School Census": "Schulzensus",
+    
+    "design": "Stichprobendesign",
+    "Ausschluss_Schule (%)": "Ausschlussquote\nauf Schulebene",
+    "Ausschluss_Schuler (%)": "Ausschlussquote\nauf Schüler-/innenebene",
+    "RQ_Sch": "Rücklaufquote\nauf Schulebene",
+    "RQ_Stu (%)": "Rücklaufquote\nauf Schüler-/innenebene",
+    "Anzahl_Schulen": "Anzahl erhobener\nSchulen",
+    "Anzahl_SuS": "Anzahl erhobener\nSchülerinnen und Schüler",
+    "UGKPopulationsumfang": "ÜGK-Populationsumfang",
+    "Ausschopfung (%)": "Ausschöpfungsquote",
+    "teilnehmende_SuS": "Anzahl teilnehmender\nSchülerinnen und Schüler\n(realisierte Stichprobe)",
+    "total": "TOTAL",
+    "canton": "Kanton",
+    "and": "und",
+
+    "competence_domain": "Kompetenzbereich",
+    "individual_characteristic": "individuelle Merkmale",
+    "difference_description": "Bezeichnung des Unterschieds",
+    "difference_result": "Unterschied und Signifikanz",
+
+    "st_female": {
+      "var": "Geschlecht",
+      "level": {
+        "0": "Mädchen",
+        "1": "Knaben"
+      }
+    },
+    "st_gender": {
+      "var": "Geschlecht",
+      "level": {
+        "1": "Mädchen",
+        "2": "Knaben"
+      }
+    },
+    "homelang": {
+      "var": "zu Hause gesprochene Sprache",
+      "level": {
+        "1": "ausschliesslich Schulsprache",
+        "2": "Schulsprache und andere Sprache(n)",
+        "3": "ausschliesslich andere Sprache(n)"
+      }
+    },
+    "homelang2": {
+      "var": "{{label/homelang/var}}",
+      "level": {
+        "1": "Schulsprache",
+        "2": "keine Schulsprache"
+      }
+    },
+    "homelang2_long": {
+      "var": "{{label/homelang/var}}",
+      "level": {
+        "1": "Schulsprache zu Hause",
+        "2": "keine Schulsprache zu Hause"
+      }
+    },
+    "sq": "SchülerInnen-Fragebogen",
+    "pq": "Eltern-Fragebogen",
+    "sq_homelang": {
+      "var": "{{label/homelang/var}} ({{label/sq}})",
+      "level": "{{label/homelang/level}}"
+    },
+    "pq_homelang": {
+      "var": "{{label/homelang/var}} ({{label/pq}})",
+      "level": "{{label/homelang/level}}"
+    },
+    "immig": {
+      "var": "Migrationshintergrund",
+      "level": {
+        "1": "kein Migrationshintergrund",
+        "2": "Migrationshintergrund (2. Generation)",
+        "3": "Migrationshintergrund (1. Generation)"
+      }
+    },
+    "immig_short": {
+      "var": "Migrationshintergrund",
+      "level": {
+        "1": "kein Mig.",
+        "2": "2. Generation",
+        "3": "1. Generation"
+      }
+    },
+    "sq_immig": {
+      "var": "{{label/immig/var}} ({{label/sq}})",
+      "level": "{{label/immig/level}}"
+    },
+    "pq_immig": {
+      "var": "{{label/immig/var}} ({{label/pq}})",
+      "level": "{{label/immig/level}}"
+    },
+    "zSES_quartiles": {
+      "var": "soziale Herkunft",
+      "level": {
+        "1": "erstes Viertel",
+        "2": "zweites Viertel",
+        "3": "drittes Viertel",
+        "4": "viertes Viertel"
+      }
+    },
+    "st_nprog": {
+      "var": "kantonales Schulprogramm",
+      "level": {
+        "1": "Grundanforderungen",
+        "2": "erweiterte Anforderungen",
+        "3": "progymnasialer Unterricht",
+        "4": "kein offizielles kantonales Schulprogramm",
+        "9": "Angaben erlauben keine Zuordnung"
+      }
+    }
+  },
+
+  "write": {
+
+    "cantons": {
+      "aboveAverage": {
+        "0" : "Kein Kanton liegt statistisch signifikant über dem Gesamtergebnis.",
+        "1" : "Der Kanton %<canton>s mit einem Anteil von {{format/percentage}} liegt statistisch signifikant über dem Gesamtergebnis.",
+        "2" : "Statistisch signifikant über dem Gesamtergebnis liegen die Kantone %<canton>s mit einem Anteil von {{format/percentage}} und %<canton>s mit einem Anteil von {{format/percentage}}.",
+        ">2" : {
+          "part1": "Statistisch signifikant über dem Gesamtergebnis liegen die Kantone ",
+          "part2.rep": "%<canton>s mit einem Anteil von {{format/percentage}}, ",
+          "part3": "%<canton>s mit einem Anteil von {{format/percentage}} und %<canton>s mit einem Anteil von {{format/percentage}}."
+        }
+      },
+
+      "belowAverage": {
+        "0" : "Kein Kanton liegt statistisch signifikant unter dem Gesamtergebnis.",
+        "1" : "Der Kanton %<canton>s mit einem Anteil von {{format/percentage}} liegt statistisch signifikant unter dem Gesamtergebnis.",
+        "2" : "Statistisch signifikant unter dem Gesamtergebnis liegen die Kantone %<canton>s mit einem Anteil von {{format/percentage}} und %<canton>s mit einem Anteil von {{format/percentage}}.",
+        ">2" : {
+          "part1": "Statistisch signifikant unter dem Gesamtergebnis liegen die Kantone ",
+          "part2.rep": "%<canton>s mit einem Anteil von {{format/percentage}}, ",
+          "part3": "%<canton>s mit einem Anteil von {{format/percentage}} und %<canton>s mit einem Anteil von {{format/percentage}}."
+        }
+      },
+
+      "bySchooltypeAndCanton": {
+        "achievementRates": "Im Schultyp %<schooltype>s liegt der Anteil der GK-erreichenden Schülerinnen und Schüler zwischen {{format/percentage}} und {{format/percentage}}.",
+        "studentDistribution": "Der Anteil der Schülerinnen und Schüler im Schultyp %<schooltype>s variiert zwischen {{format/percentage}} und {{format/percentage}}."
+      }
+    }
+  },
+
+  "draft": {
+    "featureDistribution": {
+      "part1": "Schweizweit ist die Verteilung des Merkmals %<feature>s bei den Schülerinnen und Schülern:",
+      "part2.rep": "\n\n- {{format/percentage}} %<category>s, variiert je nach\n\n  - Kanton zwischen {{format/percentage}} in %<canton>s und {{format/percentage}} in %<canton>s"
+    },
+    "achievementRate": {
+      "feature": {
+        "average": "{{draft/achievementRate/cantons/average}}",
+        "list.sig": {
+          "part1": "\n\nDabei gibt es signifikante Unterschiede zwischen einzelnen Ausprägungen vom Merkmal:",
+          "part2.rep": "\n\n- %<feature>s"
+        },
+        "details": {
+          "range": "\n\nIm Merkmal \"%<feature>s\" variiert der Antail der GK-erreichenden Schülerinnen und Schülern je nach Merkmalsausprägung zwischen {{format/percentage}} (%<category.min>s) und {{format/percentage}} (%<category.max>s).",
+          "nonSig": "Dabei ist kein Unterschied statistisch signifikant.",
+          "sig.header": "Dabei sind folgende Unterschiede statistisch signifikant:",
+          "sig.rep": "\n\n- (a) %<category>s ({{format/percentageInBrackets}}) vs (b) %<category>s ({{format/percentageInBrackets}}):\n\n  Die Differenz von {{format/percentage}} ist statistisch signifikant (p = {{format/p}}).",
+          "controlled.sig": "\n\n  bleibt nach statistischer Kontrolle anderer Merkmale signifikant {{draft/achievementRate/feature/details/..controlled.stats}}",
+          "controlled.nonSig": "\n\n  ist nach statistischer Kontrolle anderer Merkmale nicht mehr signifikant {{draft/achievementRate/feature/details/..controlled.stats}}",
+          "..controlled.stats": "\n\n  [a={{format/percentage}}, b={{format/percentage}}, diff={{format/percentage}}, p={{format/p}}]"
+        }
+      },
+      "country": {
+        "part1": "Schweizweit variiert der Anteil der GK-erreichenden Schülerinnen und Schülern je nach Kompetenzbereich zwischen {{format/percentage}} (\"%<domain.min>s\") und {{format/percentage}} (\"%<domain.max>s\"):",
+        "part2.rep": "\n\n- {{format/percentage}} haben im Bereich \"%<domain>s\"",
+        "part3": "\n\ndie Grundkompetenz erreicht."
+      },
+      "cantons": {
+        "average": "Im Kompetenzbereich \"%<domain>s\" erreichen insgesamt {{format/percentage}} der Schülerinnen und Schülern die Grundkompetenz.",
+        "range": "Der Anteil der GK-erreichenden Schülerinnen und Schülern variiert je nach Kanton zwischen {{format/percentage}} (%<canton.min>s) und {{format/percentage}} (%<canton.max>s).",
+        "aboveAverage": {
+          "0": "{{write/cantons/aboveAverage/0}}",
+          "1": "Einzig %<canton>s liegt mit einem Anteil von {{format/percentage}} um +{{format/percentage}} (p = {{format/p}}) über dem Durchschnitt der betrachteten Kantone.",
+          ">1": {
+            "part1": "%<number>s Kantone liegen statistisch signifikant über dem Durchschnitt der betrachteten Kantone:",
+            "part2.rep": "\n\n- %<canton>s mit einem Anteil von {{format/percentage}} (+{{format/percentage}}, p = {{format/p}})"
+          }
+        },
+        "belowAverage": {
+          "0": "{{write/cantons/belowAverage/0}}",
+          "1": "Einzig %<canton>s liegt mit einem Anteil von {{format/percentage}} um {{format/percentage}} (p = {{format/p}}) unter dem Durchschnitt der betrachteten Kantone.",
+          ">1": {
+            "part1": "%<number>s Kantone liegen statistisch signifikant unter dem Durchschnitt der betrachteten Kantone:",
+            "part2.rep": "\n\n- %<canton>s mit einem Anteil von {{format/percentage}} ({{format/percentageInBrackets}}, p = {{format/p}})"
+          }
+        }
+      }
+    }
+  },
+  "cantonalPortrait": {
+    "title": "# %<canton>s",
+    "header": {
+      "1": "## Population und Stichprobe",
+      "2": "## Merkmale der kantonalen Population",
+      "3": "## Erreichen der Grundkompetenzen",
+      "4": "### {{label/math}}",
+      "5": "### {{label/list_long}}",
+      "6": "### {{label/read_long}}"
+    }
+  }
+}
