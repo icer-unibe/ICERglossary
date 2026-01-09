@@ -1,11 +1,13 @@
 Package: ICERglossary
-Title: What the Package Does (One Line, Title Case)
+Title: JSON-based glossary for multilingual LSA reporting
 Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Authors@R:
+    person("Martin", "Verner", , "martin.verner@unibe.ch", role = c("aut", "cre"))
+Description: Provides a JSON-based glossary and lookup utilities for consistent,
+    multilingual wording in large-scale assessment reporting. The package is
+    designed to support Quarto-based reports, plots, and dynamically generated
+    text elements, but can also be used as a standalone glossary lookup tool.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
