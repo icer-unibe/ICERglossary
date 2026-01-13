@@ -12,11 +12,11 @@
 
   "symbol": {
     "points": " points",
-    "percentage": " %",
+    "percentage": "%%",
     "percentagePoint": " point de pourcentage",
     "percentagePoints": " points de pourcentage",
-    "percentageInBrackets": " %%",
-    "bigMark": "’",
-    "punctuationSpacer": " "
+    "percentageInBrackets": "%%",
+    "bigMark": " ",
+    "punctuationSpacer": " "
   }
 }

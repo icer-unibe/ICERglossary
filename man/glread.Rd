@@ -4,10 +4,14 @@
 \alias{glread}
 \title{Overlay JSON from external file or directory}
 \usage{
-glread(path)
+glread(path, verbose = NULL, show = 25L)
 }
 \arguments{
 \item{path}{path to a .json file or a directory containing .json files}
+
+\item{verbose}{logical; if TRUE, print status messages and changes}
+
+\item{show}{maximum number of changed/added paths to print per category}
 }
 \value{
 invisibly, the updated JSON list

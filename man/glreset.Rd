@@ -4,7 +4,7 @@
 \alias{glreset}
 \title{Reset glossary to package defaults}
 \usage{
-glreset(lang = "DE", base_lang = "DE", json_dir = NULL)
+glreset(lang = "DE", base_lang = "DE", json_dir = NULL, verbose = NULL)
 }
 \arguments{
 \item{lang}{language code, e.g. "DE", "FR", "IT"}
@@ -12,6 +12,8 @@ glreset(lang = "DE", base_lang = "DE", json_dir = NULL)
 \item{base_lang}{fallback language, default "DE"}
 
 \item{json_dir}{optional directory to load JSON from (defaults to package inst/glossary)}
+
+\item{verbose}{logical; if TRUE, print status messages}
 }
 \value{
 invisibly, the rebuilt JSON list

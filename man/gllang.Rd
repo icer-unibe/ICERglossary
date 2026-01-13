@@ -4,12 +4,14 @@
 \alias{gllang}
 \title{Switch active glossary language}
 \usage{
-gllang(lang, base_lang = "DE")
+gllang(lang, base_lang = "DE", verbose = NULL)
 }
 \arguments{
 \item{lang}{language code, e.g. "DE", "FR", "IT"}
 
 \item{base_lang}{fallback language, default "DE"}
+
+\item{verbose}{logical; if TRUE, print status messages}
 }
 \value{
 invisibly, the rebuilt JSON list

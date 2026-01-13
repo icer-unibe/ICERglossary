@@ -7,7 +7,7 @@
 glsearch(
   query,
   where = NULL,
-  scope = c("both", "path", "value"),
+  scope = c("value", "both", "path"),
   regex = TRUE,
   ignore_case = TRUE,
   n = 50L
@@ -25,8 +25,6 @@ glsearch(
 \item{ignore_case}{logical. If TRUE, match case-insensitively.}
 
 \item{n}{maximum number of results to return.}
-
-\item{in}{search in "path", "value", or "both".}
 }
 \value{
 data.frame with columns: path, value, type
