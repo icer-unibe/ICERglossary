@@ -170,7 +170,8 @@ Returns function call that can be copied and pasted into Quarto:
 
 ## Overriding glossary content
 
-Project-specific adjustments can be applied via external JSON files.
+Project-specific adjustments can be applied via external JSON files. In
+these example I’ve added
 
 ### Apply an overlay
 
@@ -201,13 +202,6 @@ or per call:
 glread("path/to/custom/json", verbose = TRUE)
 ```
 
-## Typical usage patterns
-
-- Interactive exploration of labels and formats in the R console
-- Inline text generation in Quarto documents
-- Shared glossary backend for reporting and plotting packages
-- Project-specific overrides without forking or editing the package
-
 ## File layout
 
 - `R/` – package code (API, search helpers, state management)
@@ -223,7 +217,7 @@ glread("path/to/custom/json", verbose = TRUE)
 - [x] Interactive search and picker helpers
 - [ ] Review and stabilize top-level key conventions
 - [ ] Align downstream packages (`ICERreport`, `ICERplot`)
-- [ ] Optional pkgdown site
+- [ ] Think about options to freeze glossary for finished projects
 
 ``` r
 packageVersion("ICERglossary")
