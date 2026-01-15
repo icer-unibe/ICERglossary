@@ -79,37 +79,51 @@ devtools::install_git(
 ## JSON structure (conceptual)
 
 The glossary is currently organized based on top-level keys such as the following
-(A more detailed breakdown should be reviewed):
+(the corresponding functions are explained in the next section):
 
-- `label/*`  – human-readable names (regions, domains, variables, …)
-- `format/*` – format strings for numeric output
-- `symbol/*` – language-specific units and typographic elements
-- `write/*`  – longer text templates for narrative reporting
+- `canton/*`  – Swiss cantons (keys represent the abbreviations used so far)
+- `country/*` – PISA countries (keys represent country codes)
+- `domain/*` – Various terms used in connection with tested domains
+- `feature/*`  – Various terms, value labels etc. used in connection with student characteristics
+- `stats/*`  – Statistical terms
+- `term/*`  – General terms
+- `tech/*`  – Mainly formatting and grammar
+- `old/*`  – Old definitions with top-level keys *write* and *draft*
+
 
 At load time, all relevant JSON files are merged into a single active glossary
 object.
 
 ## Quick start
 
-
-
 ### Retrieve labels and switch language
-
-Use `glget()` and enter the path to retrieve value:
 
 ```{r, eval = TRUE, message = TRUE}
 options(ICERglossary.verbose = TRUE)
-glget("label/BE_d")
 
-glget("label/byMigrationStatus")
+# get canton BE
+glcant("BE_d")
 
+# get country France
+glcnt("FRA")
+
+# switch language to French
 gllang("FR")
 
-glget("label/BE_d")
+# get domain reading (school language)
+gldom("sl")
 
+# get feature expression by migration status
+glfeat("byMigrationStatus")
+
+# switch language to Italian
 gllang("IT")
 
-glget("label/byMigrationStatus")
+# get term for sample size
+glstat("sample_size")
+
+# get formatting code for points
+glformat("points")
 
 glreset()
 ```
@@ -120,13 +134,13 @@ selected language.
 ### Format numeric values
 
 ```{r, eval = TRUE, message = TRUE}
-glformat("points", 125)
+glfmt("points", 125)
 
-glformat("percentage", 62)
+glfmt("percentage", 62)
 
 gllang("FR")
 
-glformat("percentage", 62)
+glfmt("percentage", 62)
 
 glreset()
 ```
@@ -137,23 +151,13 @@ glreset()
 ### Search glossary entries
 
 ```{r, eval = TRUE, message = TRUE}
-glsearch("bern")
-
-glsearch("points", where = "format")
-```
-
-### Complete paths by prefix
-
-```{r, eval = TRUE, message = TRUE}
-glcomplete("label/homelang")
-
-glget("label/homelang2_long/level/2")
+glsearch("sample")
 ```
 
 ### Interactive picker
 
 ```{r, eval = FALSE, message = FALSE}
-glpick("bern", where = "label")
+glpick("sample")
 ```
 
 The picker shows a numbered list of matches and prints a ready-to-paste
@@ -162,19 +166,19 @@ function call.
 ### Quarto picker helper
 
 ```{r, eval = FALSE, message = FALSE}
-qtpick("bern", where = "label")
+qtpick("sample")
 ```
 
-Returns function call that can be copied and pasted into Quarto:
+Returns function call that can be copied and pasted into Quarto. Example: Pick 
+number 2 returns a quarto snippet for sampling size.
 
 ```{r, eval = FALSE}
-`r {{gllabel("BE_d")}}`
+`r {{glstat("sample_size")}}`
 ```
 
 ## Overriding glossary content
 
 Project-specific adjustments can be applied via external JSON files.
-In these example I've added
 
 ### Apply an overlay
 
@@ -184,6 +188,15 @@ In these example I've added
 
 All `.json` files in the directory are read and merged; existing keys are
 overwritten, new keys are added.
+
+### Save glossary
+
+```r
+"glwrite("path/to/saved/json")"
+```
+
+Saves the currently active glossary as one JSON file.
+Make one export per language!
 
 ### Reset to package defaults
 
@@ -209,8 +222,6 @@ glread("path/to/custom/json", verbose = TRUE)
 
 - `R/` – package code (API, search helpers, state management)
 - `inst/extdata/json/` – built-in glossary JSON files
-  - `DE.json`, `FR.json`, `IT.json`
-  - `*_tech.json` (formats, symbols)
 - `man/` – documentation
 
 ## To do
@@ -218,9 +229,9 @@ glread("path/to/custom/json", verbose = TRUE)
 - [x] Core glossary loading and language switching
 - [x] Format and symbol resolution
 - [x] Interactive search and picker helpers
-- [ ] Review and stabilize top-level key conventions
+- [x] Review and stabilize top-level key conventions
 - [ ] Align downstream packages (`ICERreport`, `ICERplot`)
-- [ ] Think about options to freeze glossary for finished projects
+- [x] Think about options to freeze glossary for finished projects
 
 ```{r}
 packageVersion("ICERglossary")

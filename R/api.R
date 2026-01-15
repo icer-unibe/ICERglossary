@@ -194,85 +194,55 @@ gljson <- function() {
   .gl_env$json
 }
 
-#' Get a label from the glossary
+#' Write the active glossary JSON to disk
 #'
-#' Convenience wrapper for `glget("label/<key>")`.
+#' Saves the currently active glossary (gljson()) as a JSON file.
 #'
-#' @param key label key or subpath, e.g. "BE_d" or "homelang/var"
-#' @param default value returned when key is missing (default NULL)
-#' @param error if TRUE, throw an error when key is missing
-#' @return the resolved label value
+#' @param path file path to write to; if a directory is provided, a default
+#'   filename is used (ICERglossary.json)
+#' @param pretty logical; pretty-print JSON (default TRUE)
+#' @param auto_unbox logical; unbox scalars where possible (default TRUE)
+#' @param digits numeric; digits for numeric serialization (passed to jsonlite)
+#' @return invisibly, the normalized output file path
 #' @export
-gllabel <- function(key, default = NULL, error = FALSE) {
-  glget(.gl_path("label", key), default = default, error = error)
+glwrite <- function(
+    path,
+    pretty = TRUE,
+    auto_unbox = TRUE,
+    digits = NA
+) {
+  if (missing(path) || !is.character(path) || length(path) != 1L || !nzchar(path)) {
+    stop("glwrite(): 'path' must be a single non-empty string.")
+  }
+  
+  .gl_init_state()
+  if (is.null(.gl_env$json)) {
+    glreset(lang = .gl_env$lang %||% "DE", base_lang = .gl_env$base_lang %||% "DE")
+  }
+  
+  out <- path
+  
+  # if path is a directory, append default filename
+  if (dir.exists(out)) {
+    out <- file.path(out, "ICERglossary.json")
+  } else {
+    # ensure parent directory exists
+    parent <- dirname(out)
+    if (!dir.exists(parent)) {
+      dir.create(parent, recursive = TRUE, showWarnings = FALSE)
+    }
+  }
+  
+  json_txt <- jsonlite::toJSON(
+    gljson(),
+    pretty = isTRUE(pretty),
+    auto_unbox = isTRUE(auto_unbox),
+    null = "null",
+    digits = digits
+  )
+  
+  writeLines(json_txt, con = out, useBytes = TRUE)
+  
+  invisible(normalizePath(out, winslash = "/", mustWork = FALSE))
 }
 
-#' Format values using a glossary format string
-#'
-#' Convenience wrapper for formats stored under `format/<key>`.
-#' Supports positional values (unnamed) and named values. Placeholder names in
-#' the format string must use the pattern `%<name>`, which will be translated
-#' to valid `sprintf()` syntax.
-#'
-#' @param key format key or subpath, e.g. "points"
-#' @param ... values to insert; positional or named
-#' @return formatted character string
-#' @export
-glformat <- function(key, ...) {
-  fmt <- glget(.gl_path("format", key), error = TRUE)
-  
-  if (!is.character(fmt) || length(fmt) != 1L) {
-    stop("glformat(): format must be a single character string.")
-  }
-  
-  args <- list(...)
-  nms <- names(args)
-  
-  # extract placeholder names in order of appearance
-  ph_raw <- regmatches(fmt, gregexpr("%<([^>]+)>", fmt, perl = TRUE))[[1]]
-  ph <- sub("^%<|>$", "", ph_raw)
-  
-  # translate %<name> to % for sprintf
-  fmt2 <- gsub("%<[^>]+>", "%", fmt)
-  
-  if (length(ph) == 0L) {
-    return(do.call(sprintf, c(list(fmt2), args)))
-  }
-  
-  # assign names to unnamed args by placeholder order
-  if (is.null(nms)) nms <- rep("", length(args))
-  unnamed <- which(nms == "")
-  
-  if (length(unnamed) > length(ph)) {
-    stop("glformat(): too many unnamed values for format placeholders.")
-  }
-  
-  nms[unnamed] <- ph[seq_along(unnamed)]
-  names(args) <- nms
-  
-  do.call(sprintf, c(list(fmt2), args))
-}
-
-#' Format values using a glossary format string (compatibility alias)
-#'
-#' Prefer `glformat()` for new code.
-#'
-#' @param path format key or full path; if it does not start with "format/",
-#'   it is treated as a format key under "format/<path>".
-#' @param ... values to insert; positional or named
-#' @return formatted character string
-#' @export
-glfmt <- function(path, ...) {
-  if (!is.character(path) || length(path) != 1L || !nzchar(path)) {
-    stop("glfmt(): 'path' must be a non-empty string.")
-  }
-  
-  if (grepl("^format/", path)) {
-    key <- sub("^format/", "", path)
-    return(glformat(key, ...))
-  }
-  
-  glformat(path, ...)
-}
-
-`%||%` <- function(x, y) if (is.null(x)) y else x

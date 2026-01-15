@@ -1,120 +1,108 @@
-#' Search keys and values in the active glossary
+#' Search in the active glossary
 #'
-#' @param query character(1). Regular expression (default) or plain substring.
-#' @param where optional top-level key to restrict search, e.g. "label", "format", "write".
-#' @param scope search in "path", "value", or "both".
-#' @param regex logical. If FALSE, treat query as fixed substring.
-#' @param ignore_case logical. If TRUE, match case-insensitively.
-#' @param n maximum number of results to return.
-#' @return data.frame with columns: path, value, type
+#' @param query search string
+#' @param where search in "key", "value", or both (default)
+#' @param top optional top-level key to restrict search, e.g. "stat"
+#' @param ignore_case logical; case-insensitive search (default TRUE)
+#' @param fixed logical; if TRUE, treat query as fixed string, else regex (default FALSE)
+#' @param n optional maximum number of rows to return (default NULL = no limit)
+#' @return data.frame with columns path, value, type, match_in
 #' @export
-glsearch <- function(query, where = NULL, scope = c("value", "both", "path"), regex = TRUE, ignore_case = TRUE, n = 50L) {
-  if (missing(query) || !is.character(query) || length(query) != 1L) {
-    stop("glsearch(): 'query' must be a single character string.")
+glsearch <- function(
+    query,
+    where = c("key", "value"),
+    top = NULL,
+    ignore_case = TRUE,
+    fixed = FALSE,
+    n = NULL
+) {
+  if (missing(query) || !is.character(query) || length(query) != 1L || !nzchar(query)) {
+    stop("glsearch(): 'query' must be a non-empty character scalar.")
   }
-  scope <- match.arg(scope)
   
-  idx <- .gl_index_get()
+  where <- match.arg(where, several.ok = TRUE)
   
-  if (!is.null(where)) {
-    if (!is.character(where) || length(where) != 1L || !nzchar(where)) {
-      stop("glsearch(): 'where' must be a single non-empty string or NULL.")
+  .gl_init_state()
+  if (is.null(.gl_env$json)) {
+    glreset(lang = .gl_env$lang %||% "DE", base_lang = .gl_env$base_lang %||% "DE")
+  }
+  
+  json <- .gl_env$json
+  
+  if (!is.null(top)) {
+    if (!is.character(top) || length(top) != 1L || !nzchar(top)) {
+      stop("glsearch(): 'top' must be a single non-empty string or NULL.")
     }
-    idx <- idx[idx$type == where, , drop = FALSE]
-  }
-  
-  if (!nrow(idx)) return(idx)
-  
-  hay_path <- idx$path
-  hay_val  <- idx$value
-  
-  match_one <- function(hay) {
-    if (isTRUE(regex)) {
-      grepl(query, hay, perl = TRUE, ignore.case = isTRUE(ignore_case))
-    } else {
-      grepl(query, hay, fixed = TRUE, ignore.case = isTRUE(ignore_case))
+    json <- json[[top]]
+    if (is.null(json) || !is.list(json)) {
+      return(data.frame(path = character(), value = character(), type = character(), match_in = character()))
     }
   }
   
-  keep <- switch(
-    scope,
-    path  = match_one(hay_path),
-    value = match_one(hay_val),
-    both  = match_one(hay_path) | match_one(hay_val)
-  )
+  flat <- .gl_flatten(json, prefix = if (is.null(top)) "" else paste0(top, "/"))
   
-  res <- idx[keep, , drop = FALSE]
+  # build matcher
+  flags <- if (isTRUE(ignore_case)) "(?i)" else ""
+  pat <- if (isTRUE(fixed)) paste0(flags, "\\Q", query, "\\E") else paste0(flags, query)
   
-  if (nrow(res)) {
-    res$value <- ifelse(nchar(res$value) > 120, paste0(substr(res$value, 1, 117), "..."), res$value)
+  in_key <- grepl(pat, flat$path, perl = TRUE)
+  in_val <- grepl(pat, flat$value, perl = TRUE)
+  
+  keep <- rep(FALSE, nrow(flat))
+  match_in <- rep("", nrow(flat))
+  
+  if ("key" %in% where) {
+    keep <- keep | in_key
+    match_in[in_key] <- ifelse(match_in[in_key] == "", "key", paste0(match_in[in_key], "+key"))
+  }
+  if ("value" %in% where) {
+    keep <- keep | in_val
+    match_in[in_val] <- ifelse(match_in[in_val] == "", "value", paste0(match_in[in_val], "+value"))
   }
   
-  if (!is.numeric(n) || length(n) != 1L || n < 1L) n <- 50L
-  utils::head(res, n = as.integer(n))
-}
-
-#' Complete a glossary path prefix
-#'
-#' @param prefix character(1) path prefix, e.g. "write/cantons/ab"
-#' @param where optional top-level key restriction
-#' @param n maximum number of results to return
-#' @return character vector of matching paths
-#' @export
-glcomplete <- function(prefix, where = NULL, n = 50L) {
-  if (missing(prefix) || !is.character(prefix) || length(prefix) != 1L) {
-    stop("glcomplete(): 'prefix' must be a single character string.")
-  }
+  out <- flat[keep, , drop = FALSE]
+  out$match_in <- match_in[keep]
+  rownames(out) <- NULL
   
-  idx <- .gl_index_get()
-  
-  if (!is.null(where)) {
-    if (!is.character(where) || length(where) != 1L || !nzchar(where)) {
-      stop("glcomplete(): 'where' must be a single non-empty string or NULL.")
+  if (!is.null(n)) {
+    if (!is.numeric(n) || length(n) != 1L || is.na(n) || n < 1L) {
+      stop("glsearch(): 'n' must be a single positive number or NULL.")
     }
-    idx <- idx[idx$type == where, , drop = FALSE]
+    out <- utils::head(out, n = as.integer(n))
   }
   
-  if (!nrow(idx)) return(character(0))
-  
-  keep <- startsWith(idx$path, prefix)
-  paths <- idx$path[keep]
-  
-  if (!is.numeric(n) || length(n) != 1L || n < 1L) n <- 50L
-  utils::head(paths, n = as.integer(n))
+  out
 }
 
 #' Interactively pick a glossary entry and return a ready-to-paste call
 #'
-#' The function searches the active glossary using `glsearch()`, shows a
-#' numbered menu, and returns a paste-ready function call string.
-#'
 #' @param query search query passed to glsearch()
-#' @param where optional top-level restriction, e.g. "label", "format", "write"
-#' @param scope search in "path", "value", or "both"
-#' @param regex logical, passed to glsearch()
-#' @param ignore_case logical, passed to glsearch()
+#' @param top optional top-level restriction, e.g. "stat", "canton", "country"
+#' @param where search in "key", "value", or both (default)
+#' @param fixed logical; if TRUE, treat query as fixed string, else regex (default FALSE)
+#' @param ignore_case logical; case-insensitive search (default TRUE)
 #' @param n maximum number of candidates shown
 #' @param clip logical; if TRUE, copy result to clipboard when possible
 #' @return invisibly, a character(1) call string; NULL if cancelled
 #' @export
 glpick <- function(
     query,
-    where = NULL,
-    scope = c("value", "both", "path"),
-    regex = TRUE,
+    top = NULL,
+    where = c("key", "value"),
+    fixed = FALSE,
     ignore_case = TRUE,
     n = 20L,
     clip = FALSE
 ) {
-  scope <- match.arg(scope)
+  if (!is.numeric(n) || length(n) != 1L || is.na(n) || n < 1L) n <- 20L
   
   hits <- glsearch(
-    query,
+    query = query,
     where = where,
-    scope = scope,
-    regex = regex,
+    top = top,
     ignore_case = ignore_case,
-    n = n
+    fixed = fixed,
+    n = as.integer(n)
   )
   
   if (!nrow(hits)) {
@@ -129,12 +117,28 @@ glpick <- function(
   path <- hits$path[[sel]]
   
   # build paste-ready call based on top-level key
-  if (startsWith(path, "label/")) {
-    key <- sub("^label/", "", path)
-    call <- paste0('gllabel("', key, '")')
+  if (startsWith(path, "canton/")) {
+    key <- sub("^canton/", "", path)
+    call <- paste0('glcant("', key, '")')
+  } else if (startsWith(path, "country/")) {
+    key <- sub("^country/", "", path)
+    call <- paste0('glcnt("', key, '")')
+  } else if (startsWith(path, "domain/")) {
+    key <- sub("^domain/", "", path)
+    call <- paste0('gldom("', key, '")')
+  } else if (startsWith(path, "stat/")) {
+    key <- sub("^stat/", "", path)
+    call <- paste0('glstat("', key, '")')
+  } else if (startsWith(path, "term/")) {
+    key <- sub("^term/", "", path)
+    call <- paste0('glterm("', key, '")')
+  } else if (startsWith(path, "feature/")) {
+    key <- sub("^feature/", "", path)
+    call <- paste0('glfeat("', key, '")')
   } else if (startsWith(path, "format/")) {
     key <- sub("^format/", "", path)
-    call <- paste0('glformat("', key, '", )')
+    # template: users can add the value argument
+    call <- paste0('glfmt("', key, '", )')
   } else {
     call <- paste0('glget("', path, '")')
   }
@@ -152,9 +156,7 @@ glpick <- function(
     if (copied) message("glpick(): copied to clipboard.")
   }
   
-  # print without escaping for easy copy/paste
   cat(call, "\n")
-  
   invisible(call)
 }
 
@@ -188,4 +190,47 @@ qtpick <- function(..., clip = FALSE) {
   invisible(qt)
 }
 
-
+# internal: flatten a nested list into path/value rows
+.gl_flatten <- function(x, prefix = "") {
+  rows <- list()
+  
+  walk <- function(node, path) {
+    if (is.list(node)) {
+      if (length(node) == 0L) return()
+      nms <- names(node)
+      if (is.null(nms)) {
+        for (i in seq_along(node)) walk(node[[i]], paste0(path, "/", i))
+      } else {
+        for (k in nms) walk(node[[k]], paste0(path, if (nzchar(path)) "/" else "", k))
+      }
+    } else {
+      val <- if (is.null(node)) "" else node
+      if (length(val) != 1L) {
+        # collapse vectors to a single string for searching
+        val <- paste(as.character(val), collapse = " | ")
+      } else {
+        val <- as.character(val)
+      }
+      rows[[length(rows) + 1L]] <<- list(path = path, value = val)
+    }
+  }
+  
+  base <- sub("/$", "", prefix)
+  
+  if (is.list(x)) {
+    nms <- names(x)
+    if (is.null(nms)) {
+      for (i in seq_along(x)) walk(x[[i]], paste0(base, if (nzchar(base)) "/" else "", i))
+    } else {
+      for (k in nms) walk(x[[k]], paste0(base, if (nzchar(base)) "/" else "", k))
+    }
+  }
+  
+  df <- do.call(rbind, lapply(rows, as.data.frame, stringsAsFactors = FALSE))
+  if (is.null(df)) {
+    df <- data.frame(path = character(), value = character(), stringsAsFactors = FALSE)
+  }
+  
+  df$type <- sub("/.*$", "", df$path)
+  df
+}

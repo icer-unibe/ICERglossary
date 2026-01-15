@@ -1,0 +1,98 @@
+{
+  "feature": {
+    "individual_characteristic": "caratteristica individuale",
+    "byGender": "secondo il genere",
+    "bySES": "secondo la condizione sociale",
+    "byHomelang": "secondo la lingua parlata a casa",
+    "byMigrationStatus": "secondo lo statuto migratorio",
+    "st_female": {
+      "var": "Genere",
+      "level": {
+        "0": "Bambine",
+        "1": "Bambini"
+      }
+    },
+    "st_gender": {
+      "var": "Genere",
+      "level": {
+        "1": "Bambine",
+        "2": "Bambini"
+      }
+    },
+    "homelang": {
+      "var": "Lingua parlata a casa",
+      "level": {
+        "1": "Solo la lingua di scol.",
+        "2": "Lingua di scol. e altra\/e lingua\/e",
+        "3": "Solo altra\/e lingua\/e"
+      }
+    },
+    "homelang2": {
+      "var": "{{label\/homelang\/var}}",
+      "level": {
+        "1": "Lingua di scolarizzazione",
+        "2": "Nessuna lingua di scol."
+      }
+    },
+    "homelang2_long": {
+      "var": "{{label\/homelang\/var}}",
+      "level": {
+        "1": "Lingua di scol. parlata a casa",
+        "2": "Nessuna lingua di scol. parlata a casa"
+      }
+    },
+    "sq": "Questionario-allieve e allievi",
+    "pq": "Questionario-genitori",
+    "sq_homelang": {
+      "var": "{{label\/homelang\/var}} ({{label\/sq}})",
+      "level": "{{label\/homelang\/level}}"
+    },
+    "pq_homelang": {
+      "var": "{{label\/homelang\/var}} ({{label\/pq}})",
+      "level": "{{label\/homelang\/level}}"
+    },
+    "immig": {
+      "var": "Statuto migratorio",
+      "level": {
+        "1": "Senza statuto migratorio",
+        "2": "Statuto migratorio (2a gen.)",
+        "3": "Statuto migratorio (1a gen.)"
+      }
+    },
+    "immig_short": {
+      "var": "Statuto migratorio",
+      "level": {
+        "1": "nessun st. migratorio",
+        "2": "2a generazione",
+        "3": "1a generazione"
+      }
+    },
+    "sq_immig": {
+      "var": "{{label\/immig\/var}} ({{label\/sq}})",
+      "level": "{{label\/immig\/level}}"
+    },
+    "pq_immig": {
+      "var": "{{label\/immig\/var}} ({{label\/pq}})",
+      "level": "{{label\/immig\/level}}"
+    },
+    "zSES_quartiles": {
+      "var": "Condizione sociale",
+      "level": {
+        "1": "Quarto inferiore",
+        "2": "Quarto medio-inferiore",
+        "3": "Quarto medio-superiore",
+        "4": "Quarto superiore"
+      }
+    },
+    "st_nprog": {
+      "var": "Programma cantonale",
+      "level": {
+        "1": "Esigenze di base",
+        "2": "Esigenze avanzate",
+        "3": "Insegnamento pre-liceale",
+        "4": "Nessun programma cantonale ufficiale",
+        "9": "Le informazioni non consentono l'assegnazione"
+      }
+    }
+  }
+}

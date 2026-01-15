@@ -1,0 +1,21 @@
+{
+  "domain": {
+    "competence_domain": "Ambito di competenza",
+    "math": "Matematica",
+    "list": "Comprensione orale",
+    "read": "Comprensione scritta",
+    "scie": "Scienze",
+    "list_long": "Comprensione orale nella lingua di scolarizzazione",
+    "read_long": "Comprensione scritta nella lingua di scolarizzazione",
+    "sl": "Comprensione scritta nella lingua di scolarizzazione",
+    "sod": "Ortografia nella lingua di scolarizzazione tedesco",
+    "sof": "Ortografia nella lingua di scolarizzazione francese",
+    "soi": "Ortografia nella lingua di scolarizzazione italiano",
+    "hvd": "Comprensione orale nella lingua seconda tedesco",
+    "hve": "Comprensione orale nella lingua seconda inglese ",
+    "hvf": "Comprensione orale nella lingua seconda francese",
+    "lvd": "Comprensione scritta della lingua seconda tedesco",
+    "lve": "Comprensione scritta nella lingua seconda inglese",
+    "lvf": "Comprensione scritta nella lingua seconda in francese"
+  }
+}
