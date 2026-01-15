@@ -174,7 +174,8 @@ Example: Pick number 2 returns a quarto snippet for sampling size.
 
 ## Overriding glossary content
 
-Project-specific adjustments can be applied via external JSON files.
+Project-specific adjustments can be applied via external JSON files. In
+these example I’ve added
 
 ### Apply an overlay
 
