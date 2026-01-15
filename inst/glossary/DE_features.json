@@ -1,0 +1,99 @@
+{
+  "feature": {
+    "individual_characteristic": "individuelle Merkmale",
+    "byGender": "nach Geschlecht",
+    "bySES": "nach sozialer Herkunft",
+    "byHomelang": "nach zu Hause gesprochener Sprache",
+    "byMigrationStatus": "nach Migrationshintergrund",
+    "st_female": {
+      "var": "Geschlecht",
+      "level": {
+        "0": "Mädchen",
+        "1": "Knaben"
+      }
+    },
+    "st_gender": {
+      "var": "Geschlecht",
+      "level": {
+        "1": "Mädchen",
+        "2": "Knaben"
+      }
+    },
+    "homelang": {
+      "var": "zu Hause gesprochene Sprache",
+      "level": {
+        "1": "ausschliesslich Schulsprache",
+        "2": "Schulsprache und andere Sprache(n)",
+        "3": "ausschliesslich andere Sprache(n)"
+      }
+    },
+    "homelang2": {
+      "var": "{{feature/homelang/var}}",
+      "level": {
+        "1": "Schulsprache",
+        "2": "keine Schulsprache"
+      }
+    },
+    "homelang2_long": {
+      "var": "{{feature/homelang/var}}",
+      "level": {
+        "1": "Schulsprache zu Hause",
+        "2": "keine Schulsprache zu Hause"
+      }
+    },
+    "sq": "SchülerInnen-Fragebogen",
+    "pq": "Eltern-Fragebogen",
+    "sq_homelang": {
+      "var": "{{feature/homelang/var}} ({{feature/sq}})",
+      "level": "{{feature/homelang/level}}"
+    },
+    "pq_homelang": {
+      "var": "{{feature/homelang/var}} ({{feature/pq}})",
+      "level": "{{feature/homelang/level}}"
+    },
+    "immig": {
+      "var": "Migrationshintergrund",
+      "level": {
+        "1": "kein Migrationshintergrund",
+        "2": "Migrationshintergrund (2. Generation)",
+        "3": "Migrationshintergrund (1. Generation)"
+      }
+    },
+    "immig_short": {
+      "var": "Migrationshintergrund",
+      "level": {
+        "1": "kein Mig.",
+        "2": "2. Generation",
+        "3": "1. Generation"
+      }
+    },
+    "sq_immig": {
+      "var": "{{feature/immig/var}} ({{feature/sq}})",
+      "level": "{{feature/immig/level}}"
+    },
+    "pq_immig": {
+      "var": "{{feature/immig/var}} ({{feature/pq}})",
+      "level": "{{feature/immig/level}}"
+    },
+    "zSES_quartiles": {
+      "var": "soziale Herkunft",
+      "level": {
+        "1": "erstes Viertel",
+        "2": "zweites Viertel",
+        "3": "drittes Viertel",
+        "4": "viertes Viertel"
+      }
+    },
+    "st_nprog": {
+      "var": "kantonales Schulprogramm",
+      "level": {
+        "1": "Grundanforderungen",
+        "2": "erweiterte Anforderungen",
+        "3": "progymnasialer Unterricht",
+        "4": "kein offizielles kantonales Schulprogramm",
+        "9": "Angaben erlauben keine Zuordnung"
+      }
+    }
+    
+  }
+}

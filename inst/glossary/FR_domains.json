@@ -1,0 +1,21 @@
+{
+  "domain": {
+    "competence_domain": "Domaine de compétence",
+    "math": "Mathématiques",
+    "list": "Compréhension orale",
+    "read": "Compréhension écrite",
+    "scie": "Sciences naturelles",
+    "list_long": "Compréhension orale dans la langue de scolarisation",
+    "read_long": "Compréhension écrite dans la langue de scolarisation",
+    "sl": "Compréhension écrite dans la langue de scolarisation",
+    "sod": "Orthographe dans la langue de scolarisation – Allemand",
+    "sof": "Orthographe dans la langue de scolarisation – Français",
+    "soi": "Orthographe dans la langue de scolarisation – Italien",
+    "hvd": "Compréhension orale en allemand langue étrangère",
+    "hve": "Compréhension orale en anglais langue étrangère",
+    "hvf": "Compréhension orale en français langue étrangère",
+    "lvd": "Compréhension écrite en allemand langue étrangère",
+    "lve": "Compréhension écrite en anglais langue étrangère",
+    "lvf": "Compréhension écrite en français langue étrangère"
+  }
+}

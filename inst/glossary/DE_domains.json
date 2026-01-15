@@ -1,0 +1,21 @@
+{
+  "domain": {
+    "competence_domain": "Kompetenzbereich",
+    "math": "Mathematik",
+    "list": "Hören",
+    "read": "Lesen",
+    "scie": "Naturwissenschaften"
+    "list_long": "Hören in der Schulsprache",
+    "read_long": "Lesen in der Schulsprache"
+    "sl": "Lesen in der Schulsprache",
+    "sod": "Orthografie in der Schulsprache Deutsch",
+    "sof": "Orthografie in der Schulsprache Französisch",
+    "soi": "Orthografie in der Schulsprache Italienisch",
+    "hvd": "Hörverstehen in der Fremdsprache Deutsch",
+    "hve": "Hörverstehen in der Fremdsprache Englisch",
+    "hvf": "Hörverstehen in der Fremdsprache Französisch",
+    "lvd": "Leseverstehen in der Fremdsprache Deutsch",
+    "lve": "Leseverstehen in der Fremdsprache Englisch",
+    "lvf": "Leseverstehen in der Fremdsprache Französisch"
+  }
+}
