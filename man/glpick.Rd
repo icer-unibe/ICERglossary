@@ -6,9 +6,9 @@
 \usage{
 glpick(
   query,
-  where = NULL,
-  scope = c("value", "both", "path"),
-  regex = TRUE,
+  top = NULL,
+  where = c("key", "value"),
+  fixed = FALSE,
   ignore_case = TRUE,
   n = 20L,
   clip = FALSE
@@ -17,13 +17,13 @@ glpick(
 \arguments{
 \item{query}{search query passed to glsearch()}
 
-\item{where}{optional top-level restriction, e.g. "label", "format", "write"}
+\item{top}{optional top-level restriction, e.g. "stat", "canton", "country"}
 
-\item{scope}{search in "path", "value", or "both"}
+\item{where}{search in "key", "value", or both (default)}
 
-\item{regex}{logical, passed to glsearch()}
+\item{fixed}{logical; if TRUE, treat query as fixed string, else regex (default FALSE)}
 
-\item{ignore_case}{logical, passed to glsearch()}
+\item{ignore_case}{logical; case-insensitive search (default TRUE)}
 
 \item{n}{maximum number of candidates shown}
 
@@ -33,6 +33,5 @@ glpick(
 invisibly, a character(1) call string; NULL if cancelled
 }
 \description{
-The function searches the active glossary using \code{glsearch()}, shows a
-numbered menu, and returns a paste-ready function call string.
+Interactively pick a glossary entry and return a ready-to-paste call
 }

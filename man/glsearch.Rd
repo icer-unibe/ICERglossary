@@ -2,33 +2,33 @@
 % Please edit documentation in R/search.R
 \name{glsearch}
 \alias{glsearch}
-\title{Search keys and values in the active glossary}
+\title{Search in the active glossary}
 \usage{
 glsearch(
   query,
-  where = NULL,
-  scope = c("value", "both", "path"),
-  regex = TRUE,
+  where = c("key", "value"),
+  top = NULL,
   ignore_case = TRUE,
-  n = 50L
+  fixed = FALSE,
+  n = NULL
 )
 }
 \arguments{
-\item{query}{character(1). Regular expression (default) or plain substring.}
+\item{query}{search string}
 
-\item{where}{optional top-level key to restrict search, e.g. "label", "format", "write".}
+\item{where}{search in "key", "value", or both (default)}
 
-\item{scope}{search in "path", "value", or "both".}
+\item{top}{optional top-level key to restrict search, e.g. "stat"}
 
-\item{regex}{logical. If FALSE, treat query as fixed substring.}
+\item{ignore_case}{logical; case-insensitive search (default TRUE)}
 
-\item{ignore_case}{logical. If TRUE, match case-insensitively.}
+\item{fixed}{logical; if TRUE, treat query as fixed string, else regex (default FALSE)}
 
-\item{n}{maximum number of results to return.}
+\item{n}{optional maximum number of rows to return (default NULL = no limit)}
 }
 \value{
-data.frame with columns: path, value, type
+data.frame with columns path, value, type, match_in
 }
 \description{
-Search keys and values in the active glossary
+Search in the active glossary
 }

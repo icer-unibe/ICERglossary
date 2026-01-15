@@ -5,7 +5,7 @@
 #' @param error if TRUE, throw an error when key is missing
 #' @return the resolved value (usually character)
 #' @export
-glcanton <- function(key, default = NULL, error = FALSE) {
+glcant <- function(key, default = NULL, error = FALSE) {
   glget(paste0("canton/", key), default = default, error = error)
 }
 
@@ -16,7 +16,7 @@ glcanton <- function(key, default = NULL, error = FALSE) {
 #' @param error if TRUE, throw an error when key is missing
 #' @return the resolved value (usually character)
 #' @export
-glcountry <- function(key, default = NULL, error = FALSE) {
+glcnt <- function(key, default = NULL, error = FALSE) {
   glget(paste0("country/", key), default = default, error = error)
 }
 
@@ -27,7 +27,7 @@ glcountry <- function(key, default = NULL, error = FALSE) {
 #' @param error if TRUE, throw an error when key is missing
 #' @return the resolved value (usually character)
 #' @export
-gldomain <- function(key, default = NULL, error = FALSE) {
+gldom <- function(key, default = NULL, error = FALSE) {
   glget(paste0("domain/", key), default = default, error = error)
 }
 
@@ -60,7 +60,7 @@ glterm <- function(key, default = NULL, error = FALSE) {
 #' @param error if TRUE, throw an error when key is missing
 #' @return the resolved value (can be list: e.g. var + level)
 #' @export
-glfeature <- function(key, default = NULL, error = FALSE) {
+glfeat <- function(key, default = NULL, error = FALSE) {
   glget(paste0("feature/", key), default = default, error = error)
 }
 
@@ -72,7 +72,7 @@ glfeature <- function(key, default = NULL, error = FALSE) {
 #' @return a character format string
 #' @export
 glformat <- function(key, default = NULL, error = FALSE) {
-  glget(paste0("format/", key), default = default, error = error)
+  glget(.gl_path("format", key), default = default, error = error)
 }
 
 #' Format values using a glossary format string
@@ -82,26 +82,27 @@ glformat <- function(key, default = NULL, error = FALSE) {
 #' @return formatted character string
 #' @export
 glfmt <- function(key, ...) {
-  fmt <- glformat(key, error = TRUE)
+  fmt <- glget(.gl_path("format", key), error = TRUE)
   
   if (!is.character(fmt) || length(fmt) != 1L) {
     stop("glfmt(): format must be a single character string.")
   }
   
   args <- list(...)
-  nms  <- names(args)
+  nms <- names(args)
   
-  # extract placeholders in order of appearance
-  ph <- regmatches(
-    fmt,
-    gregexpr("%<([^>]+)>", fmt, perl = TRUE)
-  )[[1]]
-  ph <- sub("^%<|>$", "", ph)
+  # extract placeholder names in order of appearance
+  ph_raw <- regmatches(fmt, gregexpr("%<([^>]+)>", fmt, perl = TRUE))[[1]]
+  ph <- sub("^%<|>$", "", ph_raw)
+  
+  # translate %<name> to % for sprintf
+  fmt2 <- gsub("%<[^>]+>", "%", fmt)
   
   if (length(ph) == 0L) {
-    return(fmt)
+    return(do.call(sprintf, c(list(fmt2), args)))
   }
   
+  # assign names to unnamed args by placeholder order
   if (is.null(nms)) nms <- rep("", length(args))
   unnamed <- which(nms == "")
   
@@ -112,6 +113,9 @@ glfmt <- function(key, ...) {
   nms[unnamed] <- ph[seq_along(unnamed)]
   names(args) <- nms
   
-  do.call(sprintf, c(list(fmt), args))
+  do.call(sprintf, c(list(fmt2), args))
 }
+
+
+
 

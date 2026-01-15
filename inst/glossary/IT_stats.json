@@ -1,7 +1,5 @@
 {
   "stat": {
-{
-  "stat": {
     "mean_testregion": "Media della regione di test",
     "sig.": "sig.",
     "non-sig.": "non sig.",
@@ -89,8 +87,5 @@
     "total": "TOTALE",
     "difference_description": "Descrizione della differenza",
     "difference_result": "Differenza e significatività"
-  }
-}
-
   }
 }

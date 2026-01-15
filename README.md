@@ -56,12 +56,19 @@ devtools::install_git(
 ## JSON structure (conceptual)
 
 The glossary is currently organized based on top-level keys such as the
-following (A more detailed breakdown should be reviewed):
+following (the corresponding functions are explained in the next
+section):
 
-- `label/*` – human-readable names (regions, domains, variables, …)
-- `format/*` – format strings for numeric output
-- `symbol/*` – language-specific units and typographic elements
-- `write/*` – longer text templates for narrative reporting
+- `canton/*` – Swiss cantons (keys represent the abbreviations used so
+  far)
+- `country/*` – PISA countries (keys represent country codes)
+- `domain/*` – Various terms used in connection with tested domains
+- `feature/*` – Various terms, value labels etc. used in connection with
+  student characteristics
+- `stats/*` – Statistical terms
+- `term/*` – General terms
+- `tech/*` – Mainly formatting and grammar
+- `old/*` – Old definitions with top-level keys *write* and *draft*
 
 At load time, all relevant JSON files are merged into a single active
 glossary object.
@@ -70,27 +77,40 @@ glossary object.
 
 ### Retrieve labels and switch language
 
-Use `glget()` and enter the path to retrieve value:
-
 ``` r
 options(ICERglossary.verbose = TRUE)
-glget("label/BE_d")
+
+# get canton BE
+glcant("BE_d")
 #> [1] "Bern (deutschsprachiger Teil)"
 
-glget("label/byMigrationStatus")
-#> [1] "nach Migrationshintergrund"
+# get country France
+glcnt("FRA")
+#> [1] "Frankreich"
 
+# switch language to French
 gllang("FR")
 #> glreset(): active language='FR' (base='DE'); json_dir=<package default>
 
-glget("label/BE_d")
-#> [1] "Berne (partie germanophone)"
+# get domain reading (school language)
+gldom("sl")
+#> [1] "Compréhension écrite dans la langue de scolarisation"
 
+# get feature expression by migration status
+glfeat("byMigrationStatus")
+#> [1] "selon le statut migratoire"
+
+# switch language to Italian
 gllang("IT")
 #> glreset(): active language='IT' (base='DE'); json_dir=<package default>
 
-glget("label/byMigrationStatus")
-#> [1] "secondo lo statuto migratorio"
+# get term for sample size
+glstat("sample_size")
+#> [1] "Dimensione del campione"
+
+# get formatting code for points
+glformat("points")
+#> [1] "%<points>.0f punti"
 
 glreset()
 #> glreset(): active language='DE' (base='DE'); json_dir=<package default>
@@ -102,16 +122,16 @@ missing in the selected language.
 ### Format numeric values
 
 ``` r
-glformat("points", 125)
+glfmt("points", 125)
 #> [1] "125 Punkte"
 
-glformat("percentage", 62)
+glfmt("percentage", 62)
 #> [1] "62 Prozent"
 
 gllang("FR")
 #> glreset(): active language='FR' (base='DE'); json_dir=<package default>
 
-glformat("percentage", 62)
+glfmt("percentage", 62)
 #> [1] "62%"
 
 glreset()
@@ -123,34 +143,17 @@ glreset()
 ### Search glossary entries
 
 ``` r
-glsearch("bern")
-#>         path                             value  type
-#> 2 label/BE_d     Bern (deutschsprachiger Teil) label
-#> 3 label/BE_f Bern (französischsprachiger Teil) label
-
-glsearch("points", where = "format")
-#>              path               value   type
-#> 170 format/points %<points>.0f Punkte format
-```
-
-### Complete paths by prefix
-
-``` r
-glcomplete("label/homelang")
-#>  [1] "label/homelang/var"           "label/homelang/level/1"      
-#>  [3] "label/homelang/level/2"       "label/homelang/level/3"      
-#>  [5] "label/homelang2/var"          "label/homelang2/level/1"     
-#>  [7] "label/homelang2/level/2"      "label/homelang2_long/var"    
-#>  [9] "label/homelang2_long/level/1" "label/homelang2_long/level/2"
-
-glget("label/homelang2_long/level/2")
-#> [1] "keine Schulsprache zu Hause"
+glsearch("sample")
+#>                   path                 value type match_in
+#> 1          stat/sample            Stichprobe stat      key
+#> 2     stat/sample_size     Stichprobengrösse stat      key
+#> 3 stat/ugk_sample_size ÜGK-Populationsumfang stat      key
 ```
 
 ### Interactive picker
 
 ``` r
-glpick("bern", where = "label")
+glpick("sample")
 ```
 
 The picker shows a numbered list of matches and prints a ready-to-paste
@@ -159,13 +162,14 @@ function call.
 ### Quarto picker helper
 
 ``` r
-qtpick("bern", where = "label")
+qtpick("sample")
 ```
 
-Returns function call that can be copied and pasted into Quarto:
+Returns function call that can be copied and pasted into Quarto.
+Example: Pick number 2 returns a quarto snippet for sampling size.
 
 ``` r
-`r {{gllabel("BE_d")}}`
+`r {{glstat("sample_size")}}`
 ```
 
 ## Overriding glossary content
@@ -201,19 +205,10 @@ or per call:
 glread("path/to/custom/json", verbose = TRUE)
 ```
 
-## Typical usage patterns
-
-- Interactive exploration of labels and formats in the R console
-- Inline text generation in Quarto documents
-- Shared glossary backend for reporting and plotting packages
-- Project-specific overrides without forking or editing the package
-
 ## File layout
 
 - `R/` – package code (API, search helpers, state management)
 - `inst/extdata/json/` – built-in glossary JSON files
-  - `DE.json`, `FR.json`, `IT.json`
-  - `*_tech.json` (formats, symbols)
 - `man/` – documentation
 
 ## To do
@@ -221,9 +216,9 @@ glread("path/to/custom/json", verbose = TRUE)
 - [x] Core glossary loading and language switching
 - [x] Format and symbol resolution
 - [x] Interactive search and picker helpers
-- [ ] Review and stabilize top-level key conventions
+- [x] Review and stabilize top-level key conventions
 - [ ] Align downstream packages (`ICERreport`, `ICERplot`)
-- [ ] Optional pkgdown site
+- [ ] Think about options to freeze glossary for finished projects
 
 ``` r
 packageVersion("ICERglossary")
