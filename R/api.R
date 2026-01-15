@@ -193,3 +193,56 @@ gljson <- function() {
   .gl_ensure()
   .gl_env$json
 }
+
+#' Write the active glossary JSON to disk
+#'
+#' Saves the currently active glossary (gljson()) as a JSON file.
+#'
+#' @param path file path to write to; if a directory is provided, a default
+#'   filename is used (ICERglossary.json)
+#' @param pretty logical; pretty-print JSON (default TRUE)
+#' @param auto_unbox logical; unbox scalars where possible (default TRUE)
+#' @param digits numeric; digits for numeric serialization (passed to jsonlite)
+#' @return invisibly, the normalized output file path
+#' @export
+glwrite <- function(
+    path,
+    pretty = TRUE,
+    auto_unbox = TRUE,
+    digits = NA
+) {
+  if (missing(path) || !is.character(path) || length(path) != 1L || !nzchar(path)) {
+    stop("glwrite(): 'path' must be a single non-empty string.")
+  }
+  
+  .gl_init_state()
+  if (is.null(.gl_env$json)) {
+    glreset(lang = .gl_env$lang %||% "DE", base_lang = .gl_env$base_lang %||% "DE")
+  }
+  
+  out <- path
+  
+  # if path is a directory, append default filename
+  if (dir.exists(out)) {
+    out <- file.path(out, "ICERglossary.json")
+  } else {
+    # ensure parent directory exists
+    parent <- dirname(out)
+    if (!dir.exists(parent)) {
+      dir.create(parent, recursive = TRUE, showWarnings = FALSE)
+    }
+  }
+  
+  json_txt <- jsonlite::toJSON(
+    gljson(),
+    pretty = isTRUE(pretty),
+    auto_unbox = isTRUE(auto_unbox),
+    null = "null",
+    digits = digits
+  )
+  
+  writeLines(json_txt, con = out, useBytes = TRUE)
+  
+  invisible(normalizePath(out, winslash = "/", mustWork = FALSE))
+}
+

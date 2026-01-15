@@ -185,6 +185,15 @@ Project-specific adjustments can be applied via external JSON files.
 All `.json` files in the directory are read and merged; existing keys
 are overwritten, new keys are added.
 
+### Save glossary
+
+``` r
+"glwrite("path/to/saved/json")"
+```
+
+Saves the currently active glossary as one JSON file. Make one export
+per language!
+
 ### Reset to package defaults
 
 ``` r
@@ -218,7 +227,7 @@ glread("path/to/custom/json", verbose = TRUE)
 - [x] Interactive search and picker helpers
 - [x] Review and stabilize top-level key conventions
 - [ ] Align downstream packages (`ICERreport`, `ICERplot`)
-- [ ] Think about options to freeze glossary for finished projects
+- [x] Think about options to freeze glossary for finished projects
 
 ``` r
 packageVersion("ICERglossary")
