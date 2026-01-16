@@ -42,7 +42,7 @@
 
   "symbol": {
     "points": " punti",
-    "percentage": "%",
+    "percentage": "%%",
     "percentagePoint": " punto percentuale",
     "percentagePoints": " punti percentuali",
     "percentageInBrackets": "%%",
