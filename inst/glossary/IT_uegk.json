@@ -1,0 +1,25 @@
+{
+  "uegk": {
+    "comp_reached": "(competenze) raggiunte",
+    "comp_not_reached": "(competenze) non raggiunte",
+    "ugk_plan_overview": "Pianificazione",
+    "ugk_assess_overview": "Panormamica delle indagini VeCoF",
+    "comp_reached_total": "Ragggiungimento delle competenze fondamentali",
+    "comp_reached_lang": "Raggiungimento delle competenze fondamentali nelle lingue",
+    "comp_reached_math": "Raggiungimento delle competenze fondamentali in matematica",
+    "comp_reached_actions": "Raggiungimento delle competenze fondamentali per aspetti di competenza",
+    "comp_reached_domains": "Raggiungimento delle competenze fondamentali per ambiti di competenza",
+    "edk_item_db": "Aufgabendatenbank della CDPE (ADB) / Aufgabendatenbank der EDK (ADB)",
+    "cant_compare": "Cantoni di riferimento",
+    "ugk2016_math_report": "VeCoF 2016 - Matematica - Rapporto nazionale",
+    "ugk2017_lang_report": "VeCoF 2017 - Lingue - Rapporto nazionale",
+    "ugk2020_lang_report": "VeCoF 2020 - Lingue - Rapporto nazionale",
+    "ugk2020_main_assess": "Indagine principale VeCoF 2020",
+    "ugk_main_assess": "Indagine principale VeCoF",
+    "ugk_consortium": "IBE, Centri di coordinamento regionali, ADB, ICER",
+    "ugk_pilot": "Indagine pilota VeCoF",
+    "ugk2020_pilot": "Indagine pilota VeCoF 2020 (nel 2019)",
+    "basic_comp_assess": "Test sulla verifica delle competenze fondamentali (VeCoF)",
+    "socio_demo_vars": "Variabili sociodemografiche"
+  }
+}

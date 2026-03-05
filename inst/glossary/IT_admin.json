@@ -1,0 +1,20 @@
+{
+  "admin": {
+    "assess_morning": "in una mezza giornata",
+    "computer_based": "test in formato elettronico",
+    "assess_timepoint": "in ogni indagine",
+    "test_admin": "Somministratrice o somministratore\n/\nSomministrazione",
+    "test_admin_alt": "somministratrici e somministratori del test",
+    "regional_impl_center": "Coordinamento regionale / Centri regionali di coordinamento",
+    "regional_impl_center_2": "responsabili regionali",
+    "resp_coding": "condifica delle risposte",
+    "assess_design": "Test design",
+    "assess_date": "momento prestabilito",
+    "assess_period": "Date dell'indagine",
+    "sch_assess_process": "Svolgimento dell'indagine nelle scuole",
+    "assess_day": "in questo periodo",
+    "test_admin_resp": "la somministratrice o il somministratore",
+    "sch_coord": "coordinatore scolastico",
+    "half_day": "una mattinata"
+  }
+}

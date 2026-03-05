@@ -1,0 +1,20 @@
+{
+  "pisa": {
+    "acer": "Australian Council for Educational Research (ACER)",
+    "pisa_planning": "Calendrier PISA 2021",
+    "literacy_concept": "concept de littératie",
+    "pisa_ch_consortium": "consortium PISA.ch (jusqu'à PISA2018)\nPISA.ch (depuis PISA2021)",
+    "pisa_cycle": "cycle",
+    "pisa_sample": "échantillon PISA",
+    "pisa_scale": "Échelle PISA",
+    "pisa_assessment": "Enquête PISA",
+    "westat": "la société de recherche WESTAT Inc. aux États-Unis",
+    "literacy_measure": "mesure de la littératie",
+    "oecd_partner_econ": "pays et économies partenaires de l'OCDE",
+    "pisa_part_countries": "Pays et économies participant à l'étude PISA",
+    "pisa_gov_board": "PISA Governing Board (PGB)",
+    "pisa_switzerland": "PISA Suisse",
+    "pisa_cycle_year": "PISA XXXX",
+    "oecd_decentral_prog": "programme décentralisé de l’OCDE"
+  }
+}

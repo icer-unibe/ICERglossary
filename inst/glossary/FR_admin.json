@@ -1,0 +1,20 @@
+{
+  "admin": {
+    "assess_morning": "(pendant) une matinée",
+    "computer_based": "...grâce à un système sur ordinateur portable /\nsous forme électronique",
+    "assess_timepoint": "à chaque enquête",
+    "test_admin": "administrateur-trice de test",
+    "test_admin_alt": "administrateurs de test / administrateurs et administratrices de test",
+    "regional_impl_center": "centre de coordination régional",
+    "regional_impl_center_2": "centre de coordination régional\n(voir le commentaire dans la colonne E)",
+    "resp_coding": "codage des réponses",
+    "assess_design": "Conception de l'enquête",
+    "assess_date": "Date du prétest / date du test",
+    "assess_period": "Date du prétest\nDate de l'enquête",
+    "sch_assess_process": "Déroulement du test dans les écoles",
+    "assess_day": "le jour du test",
+    "test_admin_resp": "pour l'administrateur-trice de test",
+    "sch_coord": "pour les coordinateurs-trices scolaires (CS)",
+    "half_day": "une matinée"
+  }
+}

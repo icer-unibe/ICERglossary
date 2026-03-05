@@ -1,0 +1,20 @@
+{
+  "pisa": {
+    "acer": "Australian Council for Educational Research (ACER)",
+    "pisa_planning": "Planung PISA",
+    "literacy_concept": "literacy-Konzept",
+    "pisa_ch_consortium": "Konsortium PISA.ch\nPISA.ch",
+    "pisa_cycle": "PISA-Zyklen\n(Zyklus)",
+    "pisa_sample": "PISA-Stichprobe",
+    "pisa_scale": "PISA-Skala",
+    "pisa_assessment": "PISA-Erhebung",
+    "westat": "Forschungsunternehmen WESTAT Inc.",
+    "literacy_measure": "Messung der literacy",
+    "oecd_partner_econ": "Partnerländer und -volkswirtschaften der OECD",
+    "pisa_part_countries": "an PISA teilnehmende Länder und Volkswirtschaften",
+    "pisa_gov_board": "PISA Governing Board (PGB)",
+    "pisa_switzerland": "PISA Schweiz",
+    "pisa_cycle_year": "PISA XXXX",
+    "oecd_decentral_prog": "dezentralisiertes Programm der OECD"
+  }
+}

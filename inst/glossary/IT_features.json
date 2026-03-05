@@ -23,19 +23,19 @@
       "var": "Lingua parlata a casa",
       "level": {
         "1": "Solo la lingua di scol.",
-        "2": "Lingua di scol. e altra\/e lingua\/e",
-        "3": "Solo altra\/e lingua\/e"
+        "2": "Lingua di scol. e altra/e lingua/e",
+        "3": "Solo altra/e lingua/e"
       }
     },
     "homelang2": {
-      "var": "{{label\/homelang\/var}}",
+      "var": "{{label/homelang/var}}",
       "level": {
         "1": "Lingua di scolarizzazione",
         "2": "Nessuna lingua di scol."
       }
     },
     "homelang2_long": {
-      "var": "{{label\/homelang\/var}}",
+      "var": "{{label/homelang/var}}",
       "level": {
         "1": "Lingua di scol. parlata a casa",
         "2": "Nessuna lingua di scol. parlata a casa"
@@ -44,12 +44,12 @@
     "sq": "Questionario-allieve e allievi",
     "pq": "Questionario-genitori",
     "sq_homelang": {
-      "var": "{{label\/homelang\/var}} ({{label\/sq}})",
-      "level": "{{label\/homelang\/level}}"
+      "var": "{{label/homelang/var}} ({{label/sq}})",
+      "level": "{{label/homelang/level}}"
     },
     "pq_homelang": {
-      "var": "{{label\/homelang\/var}} ({{label\/pq}})",
-      "level": "{{label\/homelang\/level}}"
+      "var": "{{label/homelang/var}} ({{label/pq}})",
+      "level": "{{label/homelang/level}}"
     },
     "immig": {
       "var": "Statuto migratorio",
@@ -68,12 +68,12 @@
       }
     },
     "sq_immig": {
-      "var": "{{label\/immig\/var}} ({{label\/sq}})",
-      "level": "{{label\/immig\/level}}"
+      "var": "{{label/immig/var}} ({{label/sq}})",
+      "level": "{{label/immig/level}}"
     },
     "pq_immig": {
-      "var": "{{label\/immig\/var}} ({{label\/pq}})",
-      "level": "{{label\/immig\/level}}"
+      "var": "{{label/immig/var}} ({{label/pq}})",
+      "level": "{{label/immig/level}}"
     },
     "zSES_quartiles": {
       "var": "Condizione sociale",
@@ -93,6 +93,26 @@
         "4": "Nessun programma cantonale ufficiale",
         "9": "Le informazioni non consentono l'assegnazione"
       }
-    }
+    },
+    "escs_index": "(indice del) livello sociale, economico e culturale (economical, social and cultural status, ESCS)",
+    "foreign_lang": "seconda lingua seconda",
+    "comp_reached_soc_origin": "Raggiungimento delle competenze fondamentali per condizione sociale",
+    "comp_reached_gender": "Raggiungimento delle competenze fondamentali per genere",
+    "comp_reached_sch_prog": "Raggiungimento delle competenze fondamentali per programma cantonale",
+    "comp_reached_mig_status": "Raggiungimento delle competenze fondamentali per statuto migratorio",
+    "comp_reached_home_lang": "Raggiungimento delle competenze fondamentali per lingue parlate a casa",
+    "other_lang_mig": "Altra lingua – con statuto migratorio",
+    "other_lang_nomig": "Altra lingua – senza statuto migratorio",
+    "special_learn_needs": "BES = Bisogni educativi speciali",
+    "lang2_or_english": "Seconda lingua nazionale o inglese",
+    "girls": "Ragazze",
+    "boys": "Ragazzi",
+    "gender_var": "Genere (Ragazzi, Ragazze)",
+    "school_lang_mig": "Lingua del test – con statuto migratorio",
+    "school_lang_nomig": "Lingua del test – senza statuto migratorio",
+    "home_lang": "Lingua parlata a casa (lingua del test, altra lingua)",
+    "mig_background": "Origine migratoria",
+    "mig_status": "Statuto migratorio",
+    "mig_background_dup": "statuto migratorio"
   }
 }

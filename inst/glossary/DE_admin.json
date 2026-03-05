@@ -1,0 +1,20 @@
+{
+  "admin": {
+    "assess_morning": "Erhebungsmorgen",
+    "computer_based": "tabletbasiert / computerbasiert",
+    "assess_timepoint": "Erhebungszeitpunkt",
+    "test_admin": "Testadministrator/-in",
+    "test_admin_alt": "Testadministrator\nTestadministratorin",
+    "regional_impl_center": "regionales Durchführungszentrum",
+    "regional_impl_center_2": "regionales Durchführungszentrum",
+    "resp_coding": "Antworten kodieren",
+    "assess_design": "Erhebungsdesign",
+    "assess_date": "Erhebungstermin",
+    "assess_period": "Erhebungszeitraum",
+    "sch_assess_process": "Erhebungsablauf in der Schule",
+    "assess_day": "Erhebungstag",
+    "test_admin_resp": "für die Testadministration verantwortliche Person",
+    "sch_coord": "für die Schulkoordination verantwortliche Person\n(Schulkoordinator/-in)",
+    "half_day": "Halbtag"
+  }
+}

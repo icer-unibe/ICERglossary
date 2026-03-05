@@ -93,7 +93,26 @@
         "4": "kein offizielles kantonales Schulprogramm",
         "9": "Angaben erlauben keine Zuordnung"
       }
-    }
-    
+    },
+    "escs_index": "sozialer, wirtschaftlicher und kultureller Status / Index des sozialen, wirtschaftlichen und kulturellen Status (economical, social and cultural status, ESCS)",
+    "foreign_lang": "Fremdsprache",
+    "comp_reached_soc_origin": "Erreichen der Grundkompetenzen nach sozialer Herkunft",
+    "comp_reached_gender": "Erreichen der Grundkompetenzen nach Geschlecht",
+    "comp_reached_sch_prog": "Erreichen der Grundkompetenzen nach kantonalem Schulprogramm",
+    "comp_reached_mig_status": "Erreichen der Grundkompetenzen nach Migrationsstatus",
+    "comp_reached_home_lang": "Erreichen der Grundkompetenzen nach zu Hause gesprochener Sprache",
+    "other_lang_mig": "Andere Sprache - Migrationshintergrund",
+    "other_lang_nomig": "Andere Sprache - Kein Migrationshintergrund",
+    "special_learn_needs": "BLB = Besondere Lernbedürfnisse",
+    "lang2_or_english": "2. Landessprache oder Englisch",
+    "girls": "Mädchen",
+    "boys": "Knaben",
+    "gender_var": "Geschlecht (Knaben, Mädchen)",
+    "school_lang_mig": "Schulsprache - Migrationshintergrund",
+    "school_lang_nomig": "Schulsprache - Kein Migrationshintergrund",
+    "home_lang": "Zu Hause gesprochene Sprache (Schulsprache, andere Sprache)",
+    "mig_background": "Migrationshintergrund",
+    "mig_status": "Migrationsstatus",
+    "mig_background_dup": "Migrationshintergrund"
   }
 }

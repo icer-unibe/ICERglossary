@@ -16,6 +16,16 @@
     "hvf": "Comprensione orale nella lingua seconda francese",
     "lvd": "Comprensione scritta della lingua seconda tedesco",
     "lve": "Comprensione scritta nella lingua seconda inglese",
-    "lvf": "Comprensione scritta nella lingua seconda in francese"
+    "lvf": "Comprensione scritta nella lingua seconda in francese",
+    "innov_domain": "ambito innovativo",
+    "major_domain": "ambito principale",
+    "focus_domain": "ambito principale",
+    "comp_domains": "Ambiti di competenza",
+    "shape_space": "Geometria",
+    "math_model": "Matematizzare e modellizzare",
+    "count_var": "Numeri e calcolo",
+    "orthography": "Ortografia",
+    "represent_comm": "Presentare e comunicare",
+    "comp_domains_actions": "Sottoscale"
   }
 }

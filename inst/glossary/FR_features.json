@@ -28,14 +28,14 @@
       }
     },
     "homelang2": {
-      "var": "{{feature\/homelang\/var}}",
+      "var": "{{feature/homelang/var}}",
       "level": {
         "1": "Langue de scolarisation",
         "2": "Pas la langue de scolarisation"
       }
     },
     "homelang2_long": {
-      "var": "{{feature\/homelang\/var}}",
+      "var": "{{feature/homelang/var}}",
       "level": {
         "1": "Langue de scolarisation à la maison",
         "2": "Ne parlant pas la langue de scolarisation à la maison"
@@ -44,12 +44,12 @@
     "sq": "Questionnaire destiné aux élèves",
     "pq": "Questionnaire destiné aux parents",
     "sq_homelang": {
-      "var": "{{feature\/homelang\/var}} ({{feature\/sq}})",
-      "level": "{{feature\/homelang\/level}}"
+      "var": "{{feature/homelang/var}} ({{feature/sq}})",
+      "level": "{{feature/homelang/level}}"
     },
     "pq_homelang": {
-      "var": "{{feature\/homelang\/var}} ({{feature\/pq}})",
-      "level": "{{feature\/homelang\/level}}"
+      "var": "{{feature/homelang/var}} ({{feature/pq}})",
+      "level": "{{feature/homelang/level}}"
     },
     "immig": {
       "var": "Statut migratoire",
@@ -68,12 +68,12 @@
       }
     },
     "sq_immig": {
-      "var": "{{feature\/immig\/var}} ({{feature\/sq}})",
-      "level": "{{feature\/immig\/level}}"
+      "var": "{{feature/immig/var}} ({{feature/sq}})",
+      "level": "{{feature/immig/level}}"
     },
     "pq_immig": {
-      "var": "{{feature\/immig\/var}} ({{feature\/pq}})",
-      "level": "{{feature\/immig\/level}}"
+      "var": "{{feature/immig/var}} ({{feature/pq}})",
+      "level": "{{feature/immig/level}}"
     },
     "zSES_quartiles": {
       "var": "Origine sociale",
@@ -93,7 +93,26 @@
         "4": "Sans programme scolaire cantonal officiel",
         "9": "Sans différenciation en fonction des exigences"
       }
-    }
-    
+    },
+    "escs_index": "(indice du) niveau social, économique et culturel (economical, social and cultural status, ESCS)",
+    "foreign_lang": "allemand, anglais",
+    "comp_reached_soc_origin": "Atteinte des compétences fondamentales selon l'origine sociale",
+    "comp_reached_gender": "Atteinte des compétences fondamentales selon le genre",
+    "comp_reached_sch_prog": "Atteinte des compétences fondamentales selon le programme cantonal",
+    "comp_reached_mig_status": "Atteinte des compétences fondamentales selon le statut migratoire",
+    "comp_reached_home_lang": "Atteinte des compétences fondamentales selon les langues parlées à la maison",
+    "other_lang_mig": "Autre langue - issus de la migration",
+    "other_lang_nomig": "Autre langue - natifs",
+    "special_learn_needs": "BES = besoins éducatifs spécifiques / particuliers ?",
+    "lang2_or_english": "deuxième langue étrangère",
+    "girls": "Filles",
+    "boys": "Garçons",
+    "gender_var": "Genre (garçons, filles)",
+    "school_lang_mig": "Langue du test - issus de la migration",
+    "school_lang_nomig": "Langue du test - natifs",
+    "home_lang": "Langue parlée à la maison (langue de scolarisation, autre langue)",
+    "mig_background": "statut migratoire",
+    "mig_status": "Statut migratoire",
+    "mig_background_dup": "statut migratoire, migration, issu de la migration (ATTENTION: éviter *\"origine migratoire\", éviter *\"issu de l'immigration\")"
   }
 }

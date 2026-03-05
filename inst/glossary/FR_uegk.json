@@ -1,0 +1,25 @@
+{
+  "uegk": {
+    "comp_reached": "(compétences) atteintes",
+    "comp_not_reached": "(compétences) non atteintes",
+    "ugk_plan_overview": "Aperçu de la planification des testes COFO",
+    "ugk_assess_overview": "Aperçu de la planification des tests COFO",
+    "comp_reached_total": "Atteinte des compétences fondamentales",
+    "comp_reached_lang": "Atteinte des compétences fondamentales en langues",
+    "comp_reached_math": "Atteinte des compétences fondamentales en mathématiques",
+    "comp_reached_actions": "Atteinte des compétences fondamentales selon les aspects de compétence",
+    "comp_reached_domains": "Atteinte des compétences fondamentales selon les domaines de compétence",
+    "edk_item_db": "Banque de données de tâches CDIP (BDT)",
+    "cant_compare": "Cantons de référence",
+    "ugk2016_math_report": "COFO 2016 - Mathématiques - Rapport national",
+    "ugk2017_lang_report": "COFO 2017 - Langues - Rapport national",
+    "ugk2020_lang_report": "COFO 2020 - Langues - Rapport national",
+    "ugk2020_main_assess": "Enquête principale COFO 2020",
+    "ugk_main_assess": "l'enquête principale COFO",
+    "ugk_consortium": "le consortiom COFO",
+    "ugk_pilot": "le prétest COFO [de l'enquête COFO AAAA]",
+    "ugk2020_pilot": "Prétest de l'enquête COFO 2020 (en 2019)",
+    "basic_comp_assess": "Test de l'atteinte des compétences foncdamentales (COFO)-->vérification de l'atteinte des compétences fondamentales (COFO)",
+    "socio_demo_vars": "Variables sociodémographiques"
+  }
+}

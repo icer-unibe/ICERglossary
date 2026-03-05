@@ -16,6 +16,16 @@
     "hvf": "Hörverstehen in der Fremdsprache Französisch",
     "lvd": "Leseverstehen in der Fremdsprache Deutsch",
     "lve": "Leseverstehen in der Fremdsprache Englisch",
-    "lvf": "Leseverstehen in der Fremdsprache Französisch"
+    "lvf": "Leseverstehen in der Fremdsprache Französisch",
+    "innov_domain": "innovative Domäne",
+    "major_domain": "Schwerpunkt (z.B. Lesen) / Hauptdomäne",
+    "focus_domain": "Schwerpunktdomäne (z.B. Lesen)",
+    "comp_domains": "Kompetenzbereiche",
+    "shape_space": "Form und Raum",
+    "math_model": "Mathematisieren und Modellieren",
+    "count_var": "Zahl und Variable",
+    "orthography": "Orthografie",
+    "represent_comm": "Darstellen und Kommunizieren",
+    "comp_domains_actions": "Kompetenzbereiche / Handlungsaspekte"
   }
 }

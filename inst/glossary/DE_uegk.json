@@ -1,0 +1,25 @@
+{
+  "uegk": {
+    "comp_reached": "(Grundkompetenzen) erreicht",
+    "comp_not_reached": "(Grundkompetenzen) nicht erreicht",
+    "ugk_plan_overview": "Überblick Planung ÜGK",
+    "ugk_assess_overview": "Die ÜGK-Erhebungen im Überblick",
+    "comp_reached_total": "Erreichen der Grundkompetenzen",
+    "comp_reached_lang": "Erreichen der Grundkompetenzen in (den) Sprachen",
+    "comp_reached_math": "Erreichen der Grundkompetenzen in (der) Mathematik",
+    "comp_reached_actions": "Erreichen der Grundkompetenzen in den Handlungsaspekten",
+    "comp_reached_domains": "Erreichen der Grundkompetenzen in den Kompetenzbereichen",
+    "edk_item_db": "Aufgabendatenbank der EDK (ADB)",
+    "cant_compare": "Vergleichskantone",
+    "ugk2016_math_report": "ÜGK 2016 – Mathematik – Nationaler Bericht",
+    "ugk2017_lang_report": "ÜGK 2017 – Sprachen – Nationaler Bericht",
+    "ugk2020_lang_report": "ÜGK 2020 - Sprachen - Nationaler Bericht",
+    "ugk2020_main_assess": "ÜGK 2020 Haupterhebung",
+    "ugk_main_assess": "ÜGK-Haupterhebung",
+    "ugk_consortium": "Konsortium ÜGK",
+    "ugk_pilot": "ÜGK-Piloterhebung",
+    "ugk2020_pilot": "ÜGK 2020 Piloterhebung (im Jahr 2019)",
+    "basic_comp_assess": "Überprüfung der Grundkompetenzen (ÜGK)",
+    "socio_demo_vars": "Soziodemografische Variablen"
+  }
+}

@@ -16,6 +16,16 @@
     "hvf": "Compréhension orale en français langue étrangère",
     "lvd": "Compréhension écrite en allemand langue étrangère",
     "lve": "Compréhension écrite en anglais langue étrangère",
-    "lvf": "Compréhension écrite en français langue étrangère"
+    "lvf": "Compréhension écrite en français langue étrangère",
+    "innov_domain": "domaine innovatif",
+    "major_domain": "domaine principal",
+    "focus_domain": "domaine principal (par exemple la lecture)",
+    "comp_domains": "domaines de compétences-->domaines de compétence [sans \"s\"]",
+    "shape_space": "Espace",
+    "math_model": "Mathématiser et modéliser",
+    "count_var": "Nombres, opérations et algèbre",
+    "orthography": "orthographe",
+    "represent_comm": "Présenter et communiquer",
+    "comp_domains_actions": "sous-échelles-->domaines de compétence / aspects de compétence"
   }
 }
