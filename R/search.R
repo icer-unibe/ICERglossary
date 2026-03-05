@@ -190,6 +190,125 @@ qtpick <- function(..., clip = FALSE) {
   invisible(qt)
 }
 
+#' Search across DE/FR/IT and return a paste-ready glget() call
+#'
+#' Searches in keys and values across all entries (excluding top-level keys).
+#' Prints a numbered list with columns: de | fr | it.
+#' The selected item returns (and prints) a ready-to-paste call like glget("term/foo").
+#'
+#' @param query search string
+#' @param ignore_case logical; case-insensitive search (default TRUE)
+#' @param fixed logical; if TRUE, treat query as fixed substring, else regex (default TRUE)
+#' @param n maximum number of candidates shown (default 30)
+#' @param base_lang fallback language used when building non-DE json (default: current base_lang or "DE")
+#' @param clip logical; if TRUE, copy result to clipboard when possible
+#' @return invisibly, a character(1) call string; NULL if cancelled or no matches
+#' @export
+gls <- function(
+    query,
+    ignore_case = TRUE,
+    fixed = TRUE,
+    n = 30L,
+    base_lang = NULL,
+    clip = FALSE
+) {
+  if (missing(query) || !is.character(query) || length(query) != 1L || !nzchar(query)) {
+    stop("gls(): 'query' must be a non-empty character scalar.")
+  }
+  if (!is.numeric(n) || length(n) != 1L || is.na(n) || n < 1L) n <- 30L
+  n <- as.integer(n)
+  
+  .gl_init_state()
+  
+  # use current base_lang if available
+  if (is.null(base_lang)) base_lang <- .gl_env$base_lang %||% "DE"
+  if (!is.character(base_lang) || length(base_lang) != 1L || !nzchar(base_lang)) {
+    base_lang <- "DE"
+  }
+  
+  # build three language jsons without touching the global active json
+  json_de <- .gl_build_json(lang = "DE", base_lang = "DE", json_dir = NULL)
+  json_fr <- .gl_build_json(lang = "FR", base_lang = base_lang, json_dir = NULL)
+  json_it <- .gl_build_json(lang = "IT", base_lang = base_lang, json_dir = NULL)
+  
+  # flatten leaves
+  flat_de <- .gl_flatten(json_de, prefix = "")
+  flat_fr <- .gl_flatten(json_fr, prefix = "")
+  flat_it <- .gl_flatten(json_it, prefix = "")
+  
+  # align by path (union)
+  paths <- sort(unique(c(flat_de$path, flat_fr$path, flat_it$path)))
+  
+  get_val <- function(flat, p) {
+    i <- match(p, flat$path)
+    if (is.na(i)) return("")
+    flat$value[[i]]
+  }
+  
+  out <- data.frame(
+    path = paths,
+    de = vapply(paths, function(p) get_val(flat_de, p), character(1)),
+    fr = vapply(paths, function(p) get_val(flat_fr, p), character(1)),
+    it = vapply(paths, function(p) get_val(flat_it, p), character(1)),
+    stringsAsFactors = FALSE
+  )
+  
+  # search in key without top-level + in any value
+  key_no_top <- sub("^[^/]+/", "", out$path)
+  
+  # build matcher
+  flags <- if (isTRUE(ignore_case)) "(?i)" else ""
+  pat <- if (isTRUE(fixed)) paste0(flags, "\\Q", query, "\\E") else paste0(flags, query)
+  
+  in_key <- grepl(pat, key_no_top, perl = TRUE)
+  in_val <- grepl(pat, out$de, perl = TRUE) | grepl(pat, out$fr, perl = TRUE) | grepl(pat, out$it, perl = TRUE)
+  
+  hits <- out[in_key | in_val, , drop = FALSE]
+  if (!nrow(hits)) {
+    message("gls(): no matches.")
+    return(NULL)
+  }
+  
+  # limit rows
+  if (nrow(hits) > n) hits <- hits[seq_len(n), , drop = FALSE]
+  
+  # print 3-column list (de | fr | it)
+  # note: keep output simple and stable in the console
+  one_line <- function(x) {
+    # note: keep console output single-line
+    x <- gsub("[\r\n]+", " ", x)
+    x <- gsub("\\s{2,}", " ", x)
+    trimws(x)
+  }
+  
+  lines <- vapply(
+    seq_len(nrow(hits)),
+    function(i) paste0(one_line(hits$de[[i]]), " | ", one_line(hits$fr[[i]]), " | ", one_line(hits$it[[i]])),
+    character(1)
+  )
+  
+  sel <- utils::menu(lines, title = "Select entry (0 = cancel)")
+  if (sel <= 0L) return(NULL)
+  
+  path <- hits$path[[sel]]
+  call <- paste0('glget("', path, '")')
+  
+  if (isTRUE(clip)) {
+    copied <- FALSE
+    if (requireNamespace("clipr", quietly = TRUE)) {
+      clipr::write_clip(call)
+      copied <- TRUE
+    } else if (.Platform$OS.type == "windows") {
+      utils::writeClipboard(call)
+      copied <- TRUE
+    }
+    if (copied) message("gls(): copied to clipboard.")
+  }
+  
+  cat(call, "\n")
+  invisible(call)
+}
+
 # internal: flatten a nested list into path/value rows
 .gl_flatten <- function(x, prefix = "") {
   rows <- list()
@@ -233,4 +352,54 @@ qtpick <- function(..., clip = FALSE) {
   
   df$type <- sub("/.*$", "", df$path)
   df
+}
+
+#' Quarto inline wrapper for gls()
+#'
+#' Runs gls() and wraps the selected glget() call for Quarto inline R:
+#' `r {{glget("...")}}`
+#'
+#' @param query search string forwarded to gls()
+#' @param ignore_case logical; forwarded to gls()
+#' @param fixed logical; forwarded to gls()
+#' @param n integer; forwarded to gls()
+#' @param base_lang character(1); forwarded to gls()
+#' @param clip logical; if TRUE, copy wrapped string to clipboard when possible
+#' @return invisibly, a character(1) inline string; NULL if cancelled/no match
+#' @export
+glsq <- function(
+    query,
+    ignore_case = TRUE,
+    fixed = TRUE,
+    n = 30L,
+    base_lang = NULL,
+    clip = TRUE
+) {
+  call <- gls(
+    query = query,
+    ignore_case = ignore_case,
+    fixed = fixed,
+    n = n,
+    base_lang = base_lang,
+    clip = FALSE
+  )
+  
+  if (is.null(call)) return(NULL)
+  
+  inline <- paste0("`r {{", call, "}}`")
+  
+  if (isTRUE(clip)) {
+    copied <- FALSE
+    if (requireNamespace("clipr", quietly = TRUE)) {
+      clipr::write_clip(inline)
+      copied <- TRUE
+    } else if (.Platform$OS.type == "windows") {
+      utils::writeClipboard(inline)
+      copied <- TRUE
+    }
+    if (copied) message("glsq(): copied to clipboard.")
+  }
+  
+  cat(inline, "\n")
+  invisible(inline)
 }
