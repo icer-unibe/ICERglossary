@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ICERglossary
+# ICERglossary - TEST
 
 <!-- badges: start -->
 
@@ -144,10 +144,19 @@ glreset()
 
 ``` r
 glsearch("sample")
-#>                   path                 value type match_in
-#> 1          stat/sample            Stichprobe stat      key
-#> 2     stat/sample_size     Stichprobengrösse stat      key
-#> 3 stat/ugk_sample_size ÜGK-Populationsumfang stat      key
+#>                       path                             value type match_in
+#> 1         pisa/pisa_sample                   PISA-Stichprobe pisa      key
+#> 2              stat/sample                        Stichprobe stat      key
+#> 3         stat/sample_size                 Stichprobengrösse stat      key
+#> 4     stat/ugk_sample_size             ÜGK-Populationsumfang stat      key
+#> 5  stat/comparable_samples         vergleichbare Stichproben stat      key
+#> 6         stat/samples_alt                       Stichproben stat      key
+#> 7         stat/rand_sample                 Zufallsstichprobe stat      key
+#> 8  stat/cant_extra_samples       kantonale Zusatzstichproben stat      key
+#> 9         stat/sample_prep      Vorbereitung der Stichproben stat      key
+#> 10         stat/age_sample                  Altersstichprobe stat      key
+#> 11    stat/rand_sch_sample zufällig gezogene Schulstichprobe stat      key
+#> 12         term/sch_sample                   Schulstichprobe term      key
 ```
 
 ### Interactive picker
@@ -174,8 +183,7 @@ Example: Pick number 2 returns a quarto snippet for sampling size.
 
 ## Overriding glossary content
 
-Project-specific adjustments can be applied via external JSON files. In
-these example I’ve added
+Project-specific adjustments can be applied via external JSON files.
 
 ### Apply an overlay
 
@@ -232,7 +240,7 @@ glread("path/to/custom/json", verbose = TRUE)
 
 ``` r
 packageVersion("ICERglossary")
-#> [1] '0.0.0.9000'
+#> [1] '0.0.1'
 ```
 
 ## License
