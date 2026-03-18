@@ -22,6 +22,7 @@
     "DNK": "Dänemark",
     "DOM": "Dominikanische Republik",
     "ECU": "Ecuador",
+    "EGY": "Ägypten",
     "ESP": "Spanien",
     "EST": "Estland",
     "FIN": "Finnland",
@@ -45,6 +46,7 @@
     "KGZ": "Kirgisistan",
     "KHM": "Kambodscha",
     "KOR": "Korea",
+    "KRD": "Kurdistan-Region (Irak)",
     "KSV": "Kosovo",
     "LBN": "Libanon",
     "LTU": "Litauen",
@@ -77,6 +79,7 @@
     "ROU": "Rumänien",
     "RWA": "Ruanda",
     "SAU": "Saudi-Arabien",
+    "SCO": "Schottland",
     "SGP": "Singapur",
     "SLV": "El Salvador",
     "SRB": "Serbien",
@@ -89,6 +92,7 @@
     "UKR": "Ukrainische Regionen (18 von 27)",
     "URY": "Uruguay",
     "USA": "Vereinigte Staaten",
+    "UZB": "Usbekistan",
     "VNM": "Vietnam",
     "ZMB": "Sambia"
   }
