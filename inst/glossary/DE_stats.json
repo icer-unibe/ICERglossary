@@ -1,5 +1,9 @@
 {
   "stat": {
+    "distribution": "Verteilung",
+    "sig_above_ch": "Mittelwert signifikant höher als die Schweiz",
+    "equal_ch": "Mittelwert unterscheidet sich nicht signifikant von der Schweiz",
+    "sig_below_ch": "Mittelwert signifikant tiefer als die Schweiz",
     "mean_testregion": "Durchschnitt Testregion",
     "sig.": "sig.",
     "non-sig.": "nicht sig.",

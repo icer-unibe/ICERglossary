@@ -1,5 +1,9 @@
 {
   "stat": {
+    "distribution": "Distribution",
+    "sig_above_ch": "Pays qui obtiennent des performances moyennes supérieures à la Suisse",
+    "equal_ch": "Pays qui obtiennent des performances qui ne se distinguent pas de façon statistiquement significative de la Suisse",
+    "sig_below_ch": "Pays qui obtiennent des performances moyennes inférieures à la Suisse",
     "mean_testregion": "Moyenne de la région de test",
     "sig.": "sig.",
     "non-sig.": "n.s.",

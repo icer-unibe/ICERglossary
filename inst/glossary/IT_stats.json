@@ -1,5 +1,9 @@
 {
   "stat": {
+    "distribution": "Distribuzione",
+    "sig_above_ch": "Paesi che ottengono una media statisticamente significativa superiore a quella Svizzera",
+    "equal_ch": "Paesi che ottengono una media che non si distingue in modo statisticamente significativo da quella Svizzera",
+    "sig_below_ch": "Paesi che ottengono una media statisticamente significativa inferiore a quella Svizzera",
     "mean_testregion": "Media della regione di test",
     "sig.": "sig.",
     "non-sig.": "non sig.",
