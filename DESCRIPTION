@@ -1,6 +1,6 @@
 Package: ICERglossary
 Title: JSON-based glossary for multilingual LSA reporting
-Version: 0.0.2
+Version: 0.0.3
 Authors@R:
     person("Martin", "Verner", , "martin.verner@unibe.ch", role = c("aut", "cre"))
 Description: Provides a JSON-based glossary and lookup utilities for consistent,
