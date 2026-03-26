@@ -38,6 +38,7 @@
     "p_value": "Valeur p",
     "alpha": "Niveau de signification",
     "confidence_interval": "Intervalle de confiance",
+    "ci_short": "95%-IC",
     "ci_lower": "Limite inférieure de l’intervalle de confiance",
     "ci_upper": "Limite supérieure de l’intervalle de confiance",
     "standard_error": "Erreur standard",
