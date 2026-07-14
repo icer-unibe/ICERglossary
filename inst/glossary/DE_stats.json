@@ -131,6 +131,8 @@
     "age_sample": "Altersstichprobe",
     "rand_sch_sample": "zufällig gezogene Schulstichprobe",
     "validation_weighting": "Validierung und Gewichtung",
-    "variable": "Variable"
+    "variable": "Variable",
+    "mean_50_pecent": "Mittlere 50 Prozent",
+    "mean_90_percent": "Mittlere 90 Prozent"
   }
 }

@@ -131,6 +131,8 @@
     "age_sample": "campione di età",
     "rand_sch_sample": "Il campionamento delle scuole e degli allievi partecipanti al test è stato effettuato in una o due fasi o vi è stata una rilevazione totale su tutti gli allievi del cantone:",
     "validation_weighting": "convalida e validazione dei dati",
-    "variable": "Variabile"
+    "variable": "Variabile",
+    "mean_50_pecent": "50% centrale",
+    "mean_90_percent": "90% centrale"
   }
 }

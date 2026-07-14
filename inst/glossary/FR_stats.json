@@ -131,6 +131,8 @@
     "age_sample": "un échantillon basé sur l'âge",
     "rand_sch_sample": "Un échantillon d'écoles sélectionnées aléatoirement",
     "validation_weighting": "validation et pondération",
-    "variable": "variable"
+    "variable": "variable",
+    "mean_50_pecent": "50% m<c3><a9>dians",
+    "mean_90_percent": "90% m<c3><a9>dians"
   }
 }
