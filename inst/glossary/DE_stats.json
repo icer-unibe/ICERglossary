@@ -38,6 +38,7 @@
     "p_value": "p-Wert",
     "alpha": "Signifikanzniveau",
     "confidence_interval": "Konfidenzintervall",
+    "confidence_int_95": "95%-Konfidenzintervall",
     "ci_short": "95%-KI",
     "ci_lower": "untere Grenze des Konfidenzintervalls",
     "ci_upper": "obere Grenze des Konfidenzintervalls",
@@ -133,6 +134,6 @@
     "validation_weighting": "Validierung und Gewichtung",
     "variable": "Variable",
     "mean_50_percent": "Mittlere 50 Prozent",
-    "mean_90_percent": "Mittlere 90 Prozent"
+    "mean_80_percent": "Mittlere 80 Prozent"
   }
 }

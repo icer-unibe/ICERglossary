@@ -5,7 +5,7 @@
 \alias{JSON}
 \title{Active glossary JSON (namespace-scoped)}
 \format{
-An object of class \code{list} of length 14.
+An object of class \code{list} of length 15.
 }
 \usage{
 JSON

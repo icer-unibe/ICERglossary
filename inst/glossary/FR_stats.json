@@ -107,6 +107,7 @@
     "std_error": "erreur standard",
     "stu_population_est": "Estimation de la population des élèves de 8e/11e année.",
     "conf_interval": "intervalle de confiance",
+    "confidence_int_95": "Intervalle de confiance (IC) à 95%",
     "swiss_mean": "la moyenne suisse",
     "data_weight_analysis": "la pondération et l’exploitation des données collectées",
     "two_stage_design": "Le tirage des échantillons s’effectue en deux étapes.\n[selon contexte: processus d'échantillonnage en deux étapes]",
@@ -132,7 +133,9 @@
     "rand_sch_sample": "Un échantillon d'écoles sélectionnées aléatoirement",
     "validation_weighting": "validation et pondération",
     "variable": "variable",
-    "mean_50_percent": "50% m<c3><a9>dians",
-    "mean_90_percent": "90% m<c3><a9>dians"
+    "mean_50_percent": "50% centraux",
+    "mean_90_percent": "90% centraux",
+    "mean_50_short": "50% centraux",
+    "mean_80_short": "80% centraux"
   }
 }

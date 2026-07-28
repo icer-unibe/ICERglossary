@@ -209,7 +209,7 @@
     "ch41_sprog_strings_2": "Offerte transitorie",
     "ch41_sprog_strings_3": "Maturità liceale",
     "ch41_sprog_strings_4": "Maturità prof./spec.",
-    "ch41_sprog_strings_5": "Apprendistato (3-4 anni)",
+    "ch41_sprog_strings_5": "Apprendistato",
     "ch41_sprog_strings_6": "Scuole specializzate",
     "ch41_sprog_strings_7": "Form. prof. (< 3 anni)",
     "ch43_st326": "Tempo trascorso quotidianamente sui media digitali per le attività di apprendimento",
@@ -250,12 +250,18 @@
     "ch41_sek_school_types_type2": "Offerte transitorie (soluzioni di transizione)",
     "ch41_sek_school_types_type3": "Maturità gymnasiale",
     "ch41_sek_school_types_type4": "Maturità professionale, maturità specializzata e passerelle",
-    "ch41_sek_school_types_type5": "Apprendistato o scuola professionale (3-4 anni)",
+    "ch41_sek_school_types_type5": "Apprendistato o scuola professionale",
     "ch41_sek_school_types_type6": "Scuole specializzate",
-    "ch41_sek_school_types_type7": "Formazione professionale (< 3 anni)",
+    "ch41_sek_school_types_type7": "CFP",
+    "ch43_graph3_titleA": "Frequenza di utilizzo dell'AI in Svizzera",
+    "ch43_grpah3_x-axis_B": "Scala di utilizzo dell'AI (AIUSESCH)",
     "pregymnasial": "Insegnamento pre-liceale",
     "advanced_requirements": "Esigenze avanzate",
     "basic_requirements": "Esigenze di base",
-    "no_differentiation": "Nessuna differenziazione"
+    "no_differentiation": "Nessuna differenziazione",
+    "ch32_1_y_axis": "Proporzione che raggiunge la soglia minima",
+    "ch32_2_y_axis": "Rischio relativo",
+    "ch32_3_legend2": "Totale",
+    "ch41_v2_track_strings_Sek": "Livello secondario I e II"
   }
 }

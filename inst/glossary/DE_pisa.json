@@ -209,7 +209,7 @@
     "ch41_sprog_strings_2": "Brückenangebote",
     "ch41_sprog_strings_3": "Gymnasiale Maturität",
     "ch41_sprog_strings_4": "Berufs-/Fachmaturität",
-    "ch41_sprog_strings_5": "Berufslehre (3-4 J.)",
+    "ch41_sprog_strings_5": "Berufslehre",
     "ch41_sprog_strings_6": "Fachmittelschulen",
     "ch41_sprog_strings_7": "Berufsbildung (< 3 J.)",
     "ch43_st326": "Täglich mit digitalen Medien verbrachte Zeit für Lernaktivitäten",
@@ -250,12 +250,18 @@
     "ch41_sek_school_types_type2": "Brückenangebote",
     "ch41_sek_school_types_type3": "gymnasiale Maturität",
     "ch41_sek_school_types_type4": "Berufsmaturität, Fachmaturität und Passerellen",
-    "ch41_sek_school_types_type5": "Berufslehre oder Berufsfachschule (3-4 Jahre)",
+    "ch41_sek_school_types_type5": "Berufslehre oder Berufsfachschule",
     "ch41_sek_school_types_type6": "Fachmittelschulen",
-    "ch41_sek_school_types_type7": "Berufsbildung (< 3 Jahre)",
+    "ch41_sek_school_types_type7": "EBA",
+    "ch43_graph3_titleA": "Häufigkeit der KI-Nutzung in der Schweiz",
+    "ch43_grpah3_x-axis_B": "Skala Nutzung von KI (AIUSESCH)",
     "pregymnasial": "Progymnasialer Unterricht",
     "advanced_requirements": "Erweiterte Anforderungen",
     "basic_requirements": "Grundanforderungen",
-    "no_differentiation": "Keine Differenzierung"
+    "no_differentiation": "Keine Differenzierung",
+    "ch32_1_y_axis": "Anteil mit Mindestgrundlage der Kompetenzen",
+    "ch32_2_y_axis": "relatives Risiko",
+    "ch32_3_legend2": "Gesamt",
+    "ch41_v2_track_strings_Sek": "Sekundarstufen I und II"
   }
 }
