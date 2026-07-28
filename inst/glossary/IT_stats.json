@@ -134,6 +134,7 @@
     "validation_weighting": "convalida e validazione dei dati",
     "variable": "Variabile",
     "mean_50_percent": "50% centrale",
-    "mean_80_percent": "80% centrale"
+    "mean_80_percent": "80% centrale",
+    "p90_10_gap": "C90−C10"
   }
 }

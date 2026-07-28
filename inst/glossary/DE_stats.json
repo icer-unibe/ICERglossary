@@ -134,6 +134,7 @@
     "validation_weighting": "Validierung und Gewichtung",
     "variable": "Variable",
     "mean_50_percent": "Mittlere 50 Prozent",
-    "mean_80_percent": "Mittlere 80 Prozent"
+    "mean_80_percent": "Mittlere 80 Prozent",
+    "p90_10_gap": "P90−P10"
   }
 }
