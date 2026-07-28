@@ -134,8 +134,6 @@
     "validation_weighting": "validation et pondération",
     "variable": "variable",
     "mean_50_percent": "50% centraux",
-    "mean_90_percent": "90% centraux",
-    "mean_50_short": "50% centraux",
-    "mean_80_short": "80% centraux"
+    "mean_80_percent": "80% centraux"
   }
 }
