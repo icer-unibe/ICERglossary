@@ -133,8 +133,8 @@
     "rand_sch_sample": "Un échantillon d'écoles sélectionnées aléatoirement",
     "validation_weighting": "validation et pondération",
     "variable": "variable",
-    "mean_50_percent": "50% centraux",
-    "mean_80_percent": "80% centraux",
+    "mean_50_percent": "50 % centraux",
+    "mean_80_percent": "80 % centraux",
     "p90_10_gap": "C90−C10"
   }
 }
