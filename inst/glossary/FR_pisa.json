@@ -262,6 +262,19 @@
     "ch32_1_y_axis": "Proportion atteignant le socle minimal",
     "ch32_2_y_axis": "Risque relatif",
     "ch32_3_legend2": "Ensemble des élèves",
-    "ch41_v2_track_strings_Sek": "Secondaire I et II"
+    "ch41_v2_track_strings_Sek": "Secondaire I et II,
+    "ch42_coefficient":	"Coefficient",
+    "ch42_lack_personal":	"Pénurie de personnel",
+    "ch42_lack_material":	"Manque de matériel ",
+    "ch42_lab_personal":	"Personnel de laboratoire",
+    "ch42_recruitment_difficulty": "Difficultés de recrutement",
+    "ch42_parameter":	"Paramètre",
+    "ch42_pvalue":	"valeur p",
+    "ch42_support":	"Soutien de l'enseignant",
+    "ch42_discipline":	"Climat de discipline",
+    "ch42_cognitive_activation":	"Activation cognitive",
+    "ch42_collaborative_reasoning":	"Raisonnement collaboratif",
+    "ch42_environmental":	"Occasions d'apprentissage sur les questions environnementales",
+    "ch42_scientific_practices":	"Engagement envers les pratiques scientifiques"
   }
 }

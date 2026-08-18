@@ -262,6 +262,19 @@
     "ch32_1_y_axis": "Anteil mit Mindestgrundlage der Kompetenzen",
     "ch32_2_y_axis": "relatives Risiko",
     "ch32_3_legend2": "Gesamt",
-    "ch41_v2_track_strings_Sek": "Sekundarstufen I und II"
+    "ch41_v2_track_strings_Sek": "Sekundarstufen I und II",
+    "ch42_coefficient":	"Koeffizient",
+    "ch42_lack_personal":	"Personalmangel",
+    "ch42_lack_material":	"Materialmangel",
+    "ch42_lab_personal":	"Laborpersonal",
+    "ch42_recruitment_difficulty": "Erschwerte Rekrutierung",
+    "ch42_parameter":	"Parameter",
+    "ch42_pvalue":	"p-Wert",
+    "ch42_support":	"Unterstützung",
+    "ch42_discipline":	"Disziplin",
+    "ch42_cognitive_activation":	"Kogn. Aktivierung",
+    "ch42_collaborative_reasoning":	"Kollab. Denken",
+    "ch42_environmental":	"Umweltthemen",
+    "ch42_scientific_practices":	"Wiss. Praktiken"
   }
 }

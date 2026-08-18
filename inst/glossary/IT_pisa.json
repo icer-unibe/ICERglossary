@@ -262,6 +262,19 @@
     "ch32_1_y_axis": "Proporzione che raggiunge la soglia minima",
     "ch32_2_y_axis": "Rischio relativo",
     "ch32_3_legend2": "Totale",
-    "ch41_v2_track_strings_Sek": "Livello secondario I e II"
+    "ch41_v2_track_strings_Sek": "Livello secondario I e II",
+    "ch42_coefficient":	"Coefficente",
+    "ch42_lack_personal":	"Carenza di personale",
+    "ch42_lack_material":	"Carenza di materiale",
+    "ch42_lab_personal":	"Personale di laboratorio",
+    "ch42_recruitment_difficulty": "Difficoltà di recrutamento",
+    "ch42_parameter":	"Parametro",
+    "ch42_pvalue":	"valore p",
+    "ch42_support":	"Sostegno della/del docente",
+    "ch42_discipline":	"Clima disciplinare",
+    "ch42_cognitive_activation":	"Arrivazione cognitiva",
+    "ch42_collaborative_reasoning":	"Ragionamento collaborativo",
+    "ch42_environmental":	"Occasione di apprendimento sulle questioni ambientali",
+    "ch42_scientific_practices":	"Impegno riguardo alle pratiche scientifiche"
   }
 }
